@@ -13,6 +13,9 @@ PROJECT_ROOT="$SCRIPT_DIR"
 # Source the progress tracker
 source "$PROJECT_ROOT/shared/progress-tracker.sh"
 
+# Source the quick setup wizard
+source "$PROJECT_ROOT/shared/quick-setup.sh"
+
 # Color definitions
 CYAN='\033[0;36m'
 BLUE='\033[0;34m'
@@ -26,6 +29,79 @@ NC='\033[0m' # No Color
 # Configuration
 VIBEOPS_VERSION="1.0"
 MANIFESTO_FILE="$PROJECT_ROOT/AGENTIC_DEVELOPMENT_MANIFESTO.md"
+
+# Phase script paths (maps phase names to their run scripts)
+declare -A PHASE_SCRIPTS=(
+    [philosophy]="$PROJECT_ROOT/tutorial-phases/phase0-philosophy/run-phase0.sh"
+    [frame]="$PROJECT_ROOT/tutorial-phases/phase1-frame/run-phase1.sh"
+    [model]="$PROJECT_ROOT/tutorial-phases/phase2-model/run-phase2.sh"
+    [generate]="$PROJECT_ROOT/tutorial-phases/phase3-generate/run-phase3.sh"
+    [verify_observe]="$PROJECT_ROOT/tutorial-phases/phase4-verify-observe/run-phase4.sh"
+)
+
+declare -A PHASE_NAMES=(
+    [philosophy]="Philosophy Foundation"
+    [frame]="Frame the Problem"
+    [model]="Model Security & Threats"
+    [generate]="Generate with AI Partnership"
+    [verify_observe]="Verify & Observe"
+)
+
+# Ordered list of phases for sequential progression
+PHASE_ORDER=("philosophy" "frame" "model" "generate" "verify_observe")
+
+# Get the next phase after the given one, or empty string if at the end
+get_next_phase() {
+    local current="$1"
+    local found=false
+    for p in "${PHASE_ORDER[@]}"; do
+        if [[ "$found" == true ]]; then
+            echo "$p"
+            return
+        fi
+        if [[ "$p" == "$current" ]]; then
+            found=true
+        fi
+    done
+    echo ""
+}
+
+# Run a phase script, handling missing/unimplemented phases
+# Automatically offers to continue to the next phase on success
+run_phase() {
+    local phase="$1"
+    local script="${PHASE_SCRIPTS[$phase]:-}"
+
+    if [[ -z "$script" ]]; then
+        echo -e "${RED}Unknown phase: $phase${NC}"
+        return 1
+    fi
+
+    if [[ ! -f "$script" ]]; then
+        echo -e "${YELLOW}⚠️  Phase '${PHASE_NAMES[$phase]}' is not yet implemented.${NC}"
+        echo -e "${BLUE}Coming soon! For now, only Phase 0 (Philosophy Foundation) is available.${NC}"
+        echo
+        read -p "Press Enter to return to the menu..."
+        return 0
+    fi
+
+    if [[ ! -x "$script" ]]; then
+        chmod +x "$script"
+    fi
+
+    if "$script"; then
+        # Phase completed successfully — offer to continue to the next one
+        local next_phase
+        next_phase=$(get_next_phase "$phase")
+        if [[ -n "$next_phase" ]]; then
+            echo
+            read -p "Continue to ${PHASE_NAMES[$next_phase]}? (Y/n): " continue_choice
+            if [[ ! "$continue_choice" =~ ^[Nn]$ ]]; then
+                run_phase "$next_phase"
+            fi
+        fi
+    fi
+}
 
 # Display VibeOps header
 show_header() {
@@ -54,17 +130,64 @@ show_manifesto_summary() {
     echo
 }
 
+# Show compact progress checklist
+show_checklist() {
+    echo -e "${CYAN}=== Your Progress ===${NC}"
+
+    # Initialize if needed so we always have data to show
+    if [[ ! -f "$CLAUDE_ONBOARDING_DIR/progress.json" ]]; then
+        local pn=0
+        for phase in "${PHASE_ORDER[@]}"; do
+            if [[ "$phase" == "philosophy" ]]; then
+                echo -e "  ➡️  Phase 0: ${PHASE_NAMES[$phase]} ${YELLOW}(up next)${NC}"
+            else
+                echo -e "  ⏸️  Phase ${pn}: ${PHASE_NAMES[$phase]}"
+            fi
+            pn=$((pn + 1))
+        done
+        echo -e "\n  ${BLUE}Progress: 0/5 phases (0%)${NC}"
+        echo
+        return
+    fi
+
+    local current_phase
+    current_phase=$(get_current_phase)
+    local completed_count=0
+    local phase_num=0
+
+    for phase in "${PHASE_ORDER[@]}"; do
+        local completed
+        completed=$(is_phase_completed "$phase")
+
+        if [[ "$completed" == "true" ]]; then
+            echo -e "  ${GREEN}✅ Phase ${phase_num}: ${PHASE_NAMES[$phase]}${NC}"
+            completed_count=$((completed_count + 1))
+        elif [[ "$phase" == "$current_phase" ]]; then
+            echo -e "  ${YELLOW}➡️  Phase ${phase_num}: ${PHASE_NAMES[$phase]} (up next)${NC}"
+        else
+            echo -e "  ⏸️  Phase ${phase_num}: ${PHASE_NAMES[$phase]}"
+        fi
+        phase_num=$((phase_num + 1))
+    done
+
+    local progress_percent=$((completed_count * 100 / 5))
+    echo
+    echo -e "  ${BLUE}Progress: ${completed_count}/5 phases (${progress_percent}%)${NC}"
+    echo
+}
+
 # Show main menu
 show_menu() {
     echo -e "${CYAN}=== VibeOps Journey Menu ===${NC}"
     echo
     echo -e "${WHITE}1.${NC} ${GREEN}🚀 Start VibeOps Tutorial${NC} (Complete guided journey)"
     echo -e "${WHITE}2.${NC} ${BLUE}🎯 Jump to Phase${NC} (Advanced users)"
-    echo -e "${WHITE}3.${NC} ${YELLOW}🔍 Verify State${NC} (Run all verification gates)"
-    echo -e "${WHITE}4.${NC} ${RED}🔄 Reset & Clean${NC} (Start fresh)"
-    echo -e "${WHITE}5.${NC} ${CYAN}🚪 Exit${NC}"
+    echo -e "${WHITE}3.${NC} ${MAGENTA}⚡ Quick Setup${NC} (Install team skills, agents & MCP servers)"
+    echo -e "${WHITE}4.${NC} ${YELLOW}🔍 Verify State${NC} (Run all verification gates)"
+    echo -e "${WHITE}5.${NC} ${RED}🔄 Reset & Clean${NC} (Start fresh)"
+    echo -e "${WHITE}6.${NC} ${CYAN}🚪 Exit${NC}"
     echo
-    echo -e -n "${BLUE}Choose your path (1-5): ${NC}"
+    echo -e -n "${BLUE}Choose your path (1-6): ${NC}"
 }
 
 # Start complete VibeOps tutorial
@@ -90,12 +213,13 @@ start_vibeops_tutorial() {
             init_progress
         fi
 
-        # Start with philosophy phase
-        set_current_phase "philosophy"
-        echo -e "${GREEN}✅ Tutorial initialized - starting with Philosophy Foundation${NC}"
-        echo -e "${BLUE}Run: ./tutorial-phases/phase-0-philosophy.sh${NC}"
+        # Start with the current phase (or philosophy if fresh)
+        local current_phase
+        current_phase=$(get_current_phase)
+        set_current_phase "$current_phase"
+        echo -e "${GREEN}✅ Tutorial initialized - starting with ${PHASE_NAMES[$current_phase]}${NC}"
         echo
-        read -p "Press Enter to continue..."
+        run_phase "$current_phase"
     else
         echo -e "${BLUE}Tutorial cancelled. Return anytime to begin your VibeOps journey.${NC}"
     fi
@@ -120,41 +244,28 @@ jump_to_phase() {
 
     read -p "Enter phase number (0-4) or 'b' to go back: " phase_choice
 
+    local phase_key=""
     case "$phase_choice" in
-        0)
-            set_current_phase "philosophy"
-            echo -e "${GREEN}Switched to Philosophy Foundation${NC}"
-            echo -e "${BLUE}Run: ./tutorial-phases/phase-0-philosophy.sh${NC}"
-            ;;
-        1)
-            set_current_phase "frame"
-            echo -e "${GREEN}Switched to Frame the Problem${NC}"
-            echo -e "${BLUE}Run: ./tutorial-phases/phase-1-frame.sh${NC}"
-            ;;
-        2)
-            set_current_phase "model"
-            echo -e "${GREEN}Switched to Model Security & Threats${NC}"
-            echo -e "${BLUE}Run: ./tutorial-phases/phase-2-model.sh${NC}"
-            ;;
-        3)
-            set_current_phase "generate"
-            echo -e "${GREEN}Switched to Generate with AI Partnership${NC}"
-            echo -e "${BLUE}Run: ./tutorial-phases/phase-3-generate.sh${NC}"
-            ;;
-        4)
-            set_current_phase "verify_observe"
-            echo -e "${GREEN}Switched to Verify & Observe${NC}"
-            echo -e "${BLUE}Run: ./tutorial-phases/phase-4-verify-observe.sh${NC}"
-            ;;
-        b|B)
-            return
-            ;;
+        0) phase_key="philosophy" ;;
+        1) phase_key="frame" ;;
+        2) phase_key="model" ;;
+        3) phase_key="generate" ;;
+        4) phase_key="verify_observe" ;;
+        b|B) return ;;
         *)
             echo -e "${RED}Invalid selection. Please choose 0-4 or 'b'.${NC}"
+            echo
+            read -p "Press Enter to continue..."
+            return
             ;;
     esac
-    echo
-    read -p "Press Enter to continue..."
+
+    if [[ -n "$phase_key" ]]; then
+        set_current_phase "$phase_key"
+        echo -e "${GREEN}Starting ${PHASE_NAMES[$phase_key]}...${NC}"
+        echo
+        run_phase "$phase_key"
+    fi
 }
 
 # Verify current state
@@ -239,6 +350,7 @@ main_loop() {
     while true; do
         show_header
         show_manifesto_summary
+        show_checklist
         show_menu
 
         read -r choice
@@ -252,12 +364,15 @@ main_loop() {
                 jump_to_phase
                 ;;
             3)
-                verify_current_state
+                run_quick_setup
                 ;;
             4)
-                reset_and_clean
+                verify_current_state
                 ;;
             5)
+                reset_and_clean
+                ;;
+            6)
                 echo -e "${CYAN}🚪 Exiting VibeOps Onboarding${NC}"
                 echo -e "${BLUE}Remember: AI partnership is a journey, not a destination.${NC}"
                 echo -e "${GREEN}Keep exploring, keep verifying, keep growing.${NC}"
@@ -266,7 +381,7 @@ main_loop() {
                 exit 0
                 ;;
             *)
-                echo -e "${RED}Invalid choice. Please select 1-5.${NC}"
+                echo -e "${RED}Invalid choice. Please select 1-6.${NC}"
                 sleep 2
                 ;;
         esac
