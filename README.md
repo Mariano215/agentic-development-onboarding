@@ -1,4 +1,4 @@
-[![VibeOps Presentation](presentation/og-image.png)](https://mariano215.github.io/agentic-development-onboarding/presentation/)
+[![VibeOps Presentation](presentation/og-preview.png)](https://mariano215.github.io/agentic-development-onboarding/presentation/)
 
 ### [Watch the Presentation](https://mariano215.github.io/agentic-development-onboarding/presentation/) — 4 min narrated overview of the VibeOps methodology
 
