@@ -1,22 +1,12 @@
+[![VibeOps Presentation](presentation/og-image.png)](https://mariano215.github.io/agentic-development-onboarding/presentation/)
+
+### [Watch the Presentation](https://mariano215.github.io/agentic-development-onboarding/presentation/) — 4 min narrated overview of the VibeOps methodology
+
+---
+
 # VibeOps: Agentic Development Onboarding System
 
 **We are not building AI to replace developers. We are building AI to make developers superhuman.**
-
----
-
-## Watch the Presentation
-
-[![VibeOps Presentation](presentation/og-image.png)](https://mariano215.github.io/agentic-development-onboarding/presentation/)
-
-**[Click to watch the interactive narrated presentation](https://mariano215.github.io/agentic-development-onboarding/presentation/)** — 4 minutes covering the full VibeOps methodology with voice-over, animated slides, and auto-advancing narration.
-
-Or run it locally:
-```bash
-open presentation/index.html    # macOS
-xdg-open presentation/index.html  # Linux
-```
-
----
 
 ## What This Is
 
