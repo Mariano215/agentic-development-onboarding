@@ -21,11 +21,23 @@ def main():
     img = Image.new("RGB", (W, H), (10, 14, 26))
     draw = ImageDraw.Draw(img)
 
-    # Grid lines (subtle)
-    for x in range(0, W, 60):
-        draw.line([(x, 0), (x, H)], fill=(255, 255, 255, 8), width=1)
-    for y in range(0, H, 60):
-        draw.line([(0, y), (W, y)], fill=(255, 255, 255, 8), width=1)
+    # Subtle radial glow in center
+    import math
+    cx, cy = W // 2, H // 2 - 30
+    for y in range(H):
+        for x in range(W):
+            dist = math.sqrt((x - cx) ** 2 + (y - cy) ** 2)
+            max_dist = 400
+            if dist < max_dist:
+                intensity = (1 - dist / max_dist) ** 2
+                r0, g0, b0 = img.getpixel((x, y))
+                # Blue-purple glow
+                r = min(255, int(r0 + 8 * intensity))
+                g = min(255, int(g0 + 18 * intensity))
+                b = min(255, int(b0 + 40 * intensity))
+                img.putpixel((x, y), (r, g, b))
+
+    draw = ImageDraw.Draw(img)  # Recreate after pixel edits
 
     # Gradient accent bar at top
     for x in range(W):
