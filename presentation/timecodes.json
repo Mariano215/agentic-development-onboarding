@@ -1,0 +1,3322 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "title": "Title",
+      "duration": 18.72,
+      "words": [
+        {
+          "word": "Welcome",
+          "start": 0.0,
+          "end": 0.34
+        },
+        {
+          "word": "to",
+          "start": 0.34,
+          "end": 0.68
+        },
+        {
+          "word": "VibeOps",
+          "start": 0.68,
+          "end": 1.0
+        },
+        {
+          "word": "the",
+          "start": 1.32,
+          "end": 1.56
+        },
+        {
+          "word": "agentic",
+          "start": 1.56,
+          "end": 1.92
+        },
+        {
+          "word": "development",
+          "start": 1.92,
+          "end": 2.36
+        },
+        {
+          "word": "onboarding",
+          "start": 2.36,
+          "end": 3.02
+        },
+        {
+          "word": "system",
+          "start": 3.02,
+          "end": 3.3
+        },
+        {
+          "word": "We",
+          "start": 3.94,
+          "end": 4.02
+        },
+        {
+          "word": "are",
+          "start": 4.02,
+          "end": 4.12
+        },
+        {
+          "word": "not",
+          "start": 4.12,
+          "end": 4.36
+        },
+        {
+          "word": "building",
+          "start": 4.36,
+          "end": 4.58
+        },
+        {
+          "word": "AI",
+          "start": 4.58,
+          "end": 4.94
+        },
+        {
+          "word": "to",
+          "start": 4.94,
+          "end": 5.26
+        },
+        {
+          "word": "replace",
+          "start": 5.26,
+          "end": 5.6
+        },
+        {
+          "word": "developers",
+          "start": 5.6,
+          "end": 6.14
+        },
+        {
+          "word": "We",
+          "start": 6.64,
+          "end": 6.72
+        },
+        {
+          "word": "are",
+          "start": 6.72,
+          "end": 7.1
+        },
+        {
+          "word": "building",
+          "start": 7.1,
+          "end": 7.1
+        },
+        {
+          "word": "AI",
+          "start": 7.1,
+          "end": 7.44
+        },
+        {
+          "word": "to",
+          "start": 7.44,
+          "end": 7.68
+        },
+        {
+          "word": "make",
+          "start": 7.68,
+          "end": 7.9
+        },
+        {
+          "word": "developers",
+          "start": 7.9,
+          "end": 8.38
+        },
+        {
+          "word": "superhuman",
+          "start": 8.38,
+          "end": 9.14
+        },
+        {
+          "word": "In",
+          "start": 10.24,
+          "end": 10.52
+        },
+        {
+          "word": "the",
+          "start": 10.52,
+          "end": 10.68
+        },
+        {
+          "word": "next",
+          "start": 10.68,
+          "end": 10.84
+        },
+        {
+          "word": "few",
+          "start": 10.84,
+          "end": 11.1
+        },
+        {
+          "word": "minutes",
+          "start": 11.1,
+          "end": 11.34
+        },
+        {
+          "word": "you'll",
+          "start": 11.88,
+          "end": 12.04
+        },
+        {
+          "word": "learn",
+          "start": 12.04,
+          "end": 12.16
+        },
+        {
+          "word": "a",
+          "start": 12.16,
+          "end": 12.34
+        },
+        {
+          "word": "new",
+          "start": 12.34,
+          "end": 12.54
+        },
+        {
+          "word": "way",
+          "start": 12.54,
+          "end": 12.64
+        },
+        {
+          "word": "to",
+          "start": 12.64,
+          "end": 12.92
+        },
+        {
+          "word": "think",
+          "start": 12.92,
+          "end": 12.96
+        },
+        {
+          "word": "about",
+          "start": 12.96,
+          "end": 13.3
+        },
+        {
+          "word": "software",
+          "start": 13.3,
+          "end": 13.66
+        },
+        {
+          "word": "development",
+          "start": 13.66,
+          "end": 14.14
+        },
+        {
+          "word": "one",
+          "start": 14.82,
+          "end": 14.94
+        },
+        {
+          "word": "where",
+          "start": 14.94,
+          "end": 15.16
+        },
+        {
+          "word": "human",
+          "start": 15.16,
+          "end": 15.48
+        },
+        {
+          "word": "judgment",
+          "start": 15.48,
+          "end": 15.84
+        },
+        {
+          "word": "not",
+          "start": 16.42,
+          "end": 16.56
+        },
+        {
+          "word": "coding",
+          "start": 16.56,
+          "end": 16.84
+        },
+        {
+          "word": "speed",
+          "start": 16.84,
+          "end": 17.22
+        },
+        {
+          "word": "is",
+          "start": 17.54,
+          "end": 17.7
+        },
+        {
+          "word": "the",
+          "start": 17.7,
+          "end": 17.98
+        },
+        {
+          "word": "superpower",
+          "start": 17.98,
+          "end": 18.36
+        }
+      ],
+      "segments": [
+        {
+          "text": "Welcome to VibeOps, the agentic development onboarding system.",
+          "start": 0.0,
+          "end": 3.3
+        },
+        {
+          "text": "We are not building AI to replace developers.",
+          "start": 3.94,
+          "end": 6.14
+        },
+        {
+          "text": "We are building AI to make developers superhuman.",
+          "start": 6.64,
+          "end": 9.14
+        },
+        {
+          "text": "In the next few minutes, you'll learn a new way",
+          "start": 10.24,
+          "end": 12.64
+        },
+        {
+          "text": "to think about software development,",
+          "start": 12.64,
+          "end": 14.14
+        },
+        {
+          "text": "one where human judgment, not coding speed,",
+          "start": 14.82,
+          "end": 17.22
+        },
+        {
+          "text": "is the superpower.",
+          "start": 17.54,
+          "end": 18.36
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "The Bottleneck Has Shifted",
+      "duration": 18.4,
+      "words": [
+        {
+          "word": "Here's",
+          "start": 0.0,
+          "end": 0.28
+        },
+        {
+          "word": "the",
+          "start": 0.28,
+          "end": 0.6
+        },
+        {
+          "word": "fundamental",
+          "start": 0.6,
+          "end": 0.88
+        },
+        {
+          "word": "insight",
+          "start": 0.88,
+          "end": 1.32
+        },
+        {
+          "word": "In",
+          "start": 2.18,
+          "end": 2.28
+        },
+        {
+          "word": "traditional",
+          "start": 2.28,
+          "end": 2.7
+        },
+        {
+          "word": "development",
+          "start": 2.7,
+          "end": 3.2
+        },
+        {
+          "word": "the",
+          "start": 3.52,
+          "end": 3.72
+        },
+        {
+          "word": "bottleneck",
+          "start": 3.72,
+          "end": 4.1
+        },
+        {
+          "word": "was",
+          "start": 4.1,
+          "end": 4.36
+        },
+        {
+          "word": "coding",
+          "start": 4.36,
+          "end": 4.68
+        },
+        {
+          "word": "speed",
+          "start": 4.68,
+          "end": 5.16
+        },
+        {
+          "word": "How",
+          "start": 5.62,
+          "end": 5.7
+        },
+        {
+          "word": "fast",
+          "start": 5.7,
+          "end": 6.04
+        },
+        {
+          "word": "can",
+          "start": 6.04,
+          "end": 6.2
+        },
+        {
+          "word": "I",
+          "start": 6.2,
+          "end": 6.46
+        },
+        {
+          "word": "type",
+          "start": 6.46,
+          "end": 6.7
+        },
+        {
+          "word": "How",
+          "start": 7.08,
+          "end": 7.08
+        },
+        {
+          "word": "fast",
+          "start": 7.08,
+          "end": 7.36
+        },
+        {
+          "word": "can",
+          "start": 7.36,
+          "end": 7.54
+        },
+        {
+          "word": "I",
+          "start": 7.54,
+          "end": 7.82
+        },
+        {
+          "word": "implement",
+          "start": 7.82,
+          "end": 7.98
+        },
+        {
+          "word": "But",
+          "start": 8.78,
+          "end": 9.18
+        },
+        {
+          "word": "in",
+          "start": 9.18,
+          "end": 9.44
+        },
+        {
+          "word": "eugenic",
+          "start": 9.44,
+          "end": 9.74
+        },
+        {
+          "word": "development",
+          "start": 9.74,
+          "end": 10.14
+        },
+        {
+          "word": "the",
+          "start": 10.32,
+          "end": 10.5
+        },
+        {
+          "word": "bottleneck",
+          "start": 10.5,
+          "end": 10.82
+        },
+        {
+          "word": "has",
+          "start": 10.82,
+          "end": 11.14
+        },
+        {
+          "word": "shifted",
+          "start": 11.14,
+          "end": 11.32
+        },
+        {
+          "word": "to",
+          "start": 11.32,
+          "end": 11.72
+        },
+        {
+          "word": "human",
+          "start": 11.72,
+          "end": 11.92
+        },
+        {
+          "word": "judgment",
+          "start": 11.92,
+          "end": 12.24
+        },
+        {
+          "word": "How",
+          "start": 12.7,
+          "end": 12.78
+        },
+        {
+          "word": "quickly",
+          "start": 12.78,
+          "end": 13.22
+        },
+        {
+          "word": "can",
+          "start": 13.22,
+          "end": 13.52
+        },
+        {
+          "word": "I",
+          "start": 13.52,
+          "end": 13.98
+        },
+        {
+          "word": "verify",
+          "start": 13.98,
+          "end": 14.02
+        },
+        {
+          "word": "what's",
+          "start": 14.02,
+          "end": 14.52
+        },
+        {
+          "word": "right",
+          "start": 14.52,
+          "end": 14.76
+        },
+        {
+          "word": "This",
+          "start": 16.0,
+          "end": 16.36
+        },
+        {
+          "word": "changes",
+          "start": 16.36,
+          "end": 16.68
+        },
+        {
+          "word": "everything",
+          "start": 16.68,
+          "end": 17.16
+        },
+        {
+          "word": "about",
+          "start": 17.16,
+          "end": 17.46
+        },
+        {
+          "word": "how",
+          "start": 17.46,
+          "end": 17.64
+        },
+        {
+          "word": "we",
+          "start": 17.64,
+          "end": 17.88
+        },
+        {
+          "word": "work",
+          "start": 17.88,
+          "end": 18.12
+        }
+      ],
+      "segments": [
+        {
+          "text": "Here's the fundamental insight.",
+          "start": 0.0,
+          "end": 1.32
+        },
+        {
+          "text": "In traditional development, the bottleneck was coding speed.",
+          "start": 2.18,
+          "end": 5.16
+        },
+        {
+          "text": "How fast can I type?",
+          "start": 5.62,
+          "end": 6.7
+        },
+        {
+          "text": "How fast can I implement?",
+          "start": 7.08,
+          "end": 7.98
+        },
+        {
+          "text": "But in eugenic development, the bottleneck",
+          "start": 8.78,
+          "end": 10.82
+        },
+        {
+          "text": "has shifted to human judgment.",
+          "start": 10.82,
+          "end": 12.24
+        },
+        {
+          "text": "How quickly can I verify what's right?",
+          "start": 12.7,
+          "end": 14.76
+        },
+        {
+          "text": "This changes everything about how we work.",
+          "start": 16.0,
+          "end": 18.12
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "What is VibeOps?",
+      "duration": 23.37,
+      "words": [
+        {
+          "word": "VIBOPS",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": "is",
+          "start": 0.52,
+          "end": 0.74
+        },
+        {
+          "word": "built",
+          "start": 0.74,
+          "end": 0.88
+        },
+        {
+          "word": "on",
+          "start": 0.88,
+          "end": 1.12
+        },
+        {
+          "word": "four",
+          "start": 1.12,
+          "end": 1.42
+        },
+        {
+          "word": "pillars",
+          "start": 1.42,
+          "end": 1.76
+        },
+        {
+          "word": "First",
+          "start": 2.52,
+          "end": 2.52
+        },
+        {
+          "word": "AI",
+          "start": 2.76,
+          "end": 3.06
+        },
+        {
+          "word": "partnership",
+          "start": 3.06,
+          "end": 3.5
+        },
+        {
+          "word": "over",
+          "start": 3.5,
+          "end": 3.84
+        },
+        {
+          "word": "tool",
+          "start": 3.84,
+          "end": 4.1
+        },
+        {
+          "word": "usage",
+          "start": 4.1,
+          "end": 4.46
+        },
+        {
+          "word": "Treat",
+          "start": 4.84,
+          "end": 4.84
+        },
+        {
+          "word": "AI",
+          "start": 4.84,
+          "end": 5.12
+        },
+        {
+          "word": "as",
+          "start": 5.12,
+          "end": 5.3
+        },
+        {
+          "word": "a",
+          "start": 5.3,
+          "end": 5.72
+        },
+        {
+          "word": "thinking",
+          "start": 5.72,
+          "end": 5.72
+        },
+        {
+          "word": "partner",
+          "start": 5.72,
+          "end": 6.08
+        },
+        {
+          "word": "not",
+          "start": 6.36,
+          "end": 6.46
+        },
+        {
+          "word": "autocomplete",
+          "start": 6.46,
+          "end": 7.1
+        },
+        {
+          "word": "Second",
+          "start": 7.76,
+          "end": 7.98
+        },
+        {
+          "word": "verification",
+          "start": 8.32,
+          "end": 8.76
+        },
+        {
+          "word": "over",
+          "start": 8.76,
+          "end": 9.22
+        },
+        {
+          "word": "implementation",
+          "start": 9.22,
+          "end": 9.8
+        },
+        {
+          "word": "Prove",
+          "start": 10.42,
+          "end": 10.46
+        },
+        {
+          "word": "before",
+          "start": 10.46,
+          "end": 10.76
+        },
+        {
+          "word": "you",
+          "start": 10.76,
+          "end": 11.0
+        },
+        {
+          "word": "build",
+          "start": 11.0,
+          "end": 11.28
+        },
+        {
+          "word": "Third",
+          "start": 12.02,
+          "end": 12.04
+        },
+        {
+          "word": "orchestration",
+          "start": 12.36,
+          "end": 12.84
+        },
+        {
+          "word": "over",
+          "start": 12.84,
+          "end": 13.24
+        },
+        {
+          "word": "coding",
+          "start": 13.24,
+          "end": 13.52
+        },
+        {
+          "word": "Guide",
+          "start": 14.14,
+          "end": 14.14
+        },
+        {
+          "word": "intelligent",
+          "start": 14.14,
+          "end": 14.72
+        },
+        {
+          "word": "systems",
+          "start": 14.72,
+          "end": 15.16
+        },
+        {
+          "word": "instead",
+          "start": 15.16,
+          "end": 15.46
+        },
+        {
+          "word": "of",
+          "start": 15.46,
+          "end": 15.66
+        },
+        {
+          "word": "writing",
+          "start": 15.66,
+          "end": 15.9
+        },
+        {
+          "word": "every",
+          "start": 15.9,
+          "end": 16.26
+        },
+        {
+          "word": "line",
+          "start": 16.26,
+          "end": 16.54
+        },
+        {
+          "word": "Fourth",
+          "start": 17.4,
+          "end": 17.4
+        },
+        {
+          "word": "emergence",
+          "start": 17.98,
+          "end": 18.32
+        },
+        {
+          "word": "over",
+          "start": 18.32,
+          "end": 18.7
+        },
+        {
+          "word": "planning",
+          "start": 18.7,
+          "end": 19.04
+        },
+        {
+          "word": "Create",
+          "start": 19.72,
+          "end": 19.72
+        },
+        {
+          "word": "conditions",
+          "start": 19.72,
+          "end": 20.08
+        },
+        {
+          "word": "for",
+          "start": 20.08,
+          "end": 20.54
+        },
+        {
+          "word": "solutions",
+          "start": 20.54,
+          "end": 20.8
+        },
+        {
+          "word": "to",
+          "start": 20.8,
+          "end": 21.24
+        },
+        {
+          "word": "arise",
+          "start": 21.24,
+          "end": 21.48
+        },
+        {
+          "word": "through",
+          "start": 21.48,
+          "end": 21.8
+        },
+        {
+          "word": "collaboration",
+          "start": 21.8,
+          "end": 22.34
+        }
+      ],
+      "segments": [
+        {
+          "text": "VIBOPS is built on four pillars.",
+          "start": 0.0,
+          "end": 1.76
+        },
+        {
+          "text": "First, AI partnership over tool usage.",
+          "start": 2.52,
+          "end": 4.46
+        },
+        {
+          "text": "Treat AI as a thinking partner, not autocomplete.",
+          "start": 4.84,
+          "end": 7.1
+        },
+        {
+          "text": "Second, verification over implementation.",
+          "start": 7.76,
+          "end": 9.8
+        },
+        {
+          "text": "Prove before you build.",
+          "start": 10.42,
+          "end": 11.28
+        },
+        {
+          "text": "Third, orchestration over coding.",
+          "start": 12.02,
+          "end": 13.52
+        },
+        {
+          "text": "Guide intelligent systems instead of writing every line.",
+          "start": 14.14,
+          "end": 16.54
+        },
+        {
+          "text": "Fourth, emergence over planning.",
+          "start": 17.4,
+          "end": 19.04
+        },
+        {
+          "text": "Create conditions for solutions to arise",
+          "start": 19.72,
+          "end": 21.48
+        },
+        {
+          "text": "through collaboration.",
+          "start": 21.48,
+          "end": 22.34
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "The VibeOps Cycle",
+      "duration": 20.32,
+      "words": [
+        {
+          "word": "The",
+          "start": 0.0,
+          "end": 0.36
+        },
+        {
+          "word": "VIBOPS",
+          "start": 0.36,
+          "end": 0.54
+        },
+        {
+          "word": "development",
+          "start": 0.54,
+          "end": 1.04
+        },
+        {
+          "word": "cycle",
+          "start": 1.04,
+          "end": 1.34
+        },
+        {
+          "word": "has",
+          "start": 1.34,
+          "end": 1.6
+        },
+        {
+          "word": "four",
+          "start": 1.6,
+          "end": 1.94
+        },
+        {
+          "word": "phases",
+          "start": 1.94,
+          "end": 2.28
+        },
+        {
+          "word": "Envision",
+          "start": 3.2,
+          "end": 3.44
+        },
+        {
+          "word": "where",
+          "start": 4.0,
+          "end": 4.24
+        },
+        {
+          "word": "humans",
+          "start": 4.24,
+          "end": 4.48
+        },
+        {
+          "word": "define",
+          "start": 4.48,
+          "end": 4.86
+        },
+        {
+          "word": "the",
+          "start": 4.86,
+          "end": 5.08
+        },
+        {
+          "word": "vision",
+          "start": 5.08,
+          "end": 5.24
+        },
+        {
+          "word": "and",
+          "start": 5.24,
+          "end": 5.58
+        },
+        {
+          "word": "constraints",
+          "start": 5.58,
+          "end": 5.96
+        },
+        {
+          "word": "Explore",
+          "start": 6.78,
+          "end": 6.8
+        },
+        {
+          "word": "where",
+          "start": 7.06,
+          "end": 7.24
+        },
+        {
+          "word": "human",
+          "start": 7.24,
+          "end": 7.44
+        },
+        {
+          "word": "and",
+          "start": 7.44,
+          "end": 7.62
+        },
+        {
+          "word": "AI",
+          "start": 7.62,
+          "end": 7.78
+        },
+        {
+          "word": "collaborate",
+          "start": 7.78,
+          "end": 8.24
+        },
+        {
+          "word": "to",
+          "start": 8.24,
+          "end": 8.64
+        },
+        {
+          "word": "evaluate",
+          "start": 8.64,
+          "end": 8.84
+        },
+        {
+          "word": "options",
+          "start": 8.84,
+          "end": 9.38
+        },
+        {
+          "word": "Execute",
+          "start": 10.4,
+          "end": 10.64
+        },
+        {
+          "word": "where",
+          "start": 10.8,
+          "end": 10.88
+        },
+        {
+          "word": "AI",
+          "start": 10.88,
+          "end": 11.16
+        },
+        {
+          "word": "implements",
+          "start": 11.16,
+          "end": 11.54
+        },
+        {
+          "word": "based",
+          "start": 11.54,
+          "end": 11.9
+        },
+        {
+          "word": "on",
+          "start": 11.9,
+          "end": 12.52
+        },
+        {
+          "word": "verified",
+          "start": 12.52,
+          "end": 12.52
+        },
+        {
+          "word": "boundaries",
+          "start": 12.52,
+          "end": 12.96
+        },
+        {
+          "word": "And",
+          "start": 13.76,
+          "end": 14.28
+        },
+        {
+          "word": "evolve",
+          "start": 14.28,
+          "end": 14.28
+        },
+        {
+          "word": "where",
+          "start": 14.62,
+          "end": 14.72
+        },
+        {
+          "word": "we",
+          "start": 14.72,
+          "end": 14.88
+        },
+        {
+          "word": "learn",
+          "start": 14.88,
+          "end": 15.06
+        },
+        {
+          "word": "and",
+          "start": 15.06,
+          "end": 15.58
+        },
+        {
+          "word": "improve",
+          "start": 15.58,
+          "end": 15.58
+        },
+        {
+          "word": "continuously",
+          "start": 15.58,
+          "end": 16.2
+        },
+        {
+          "word": "This",
+          "start": 16.92,
+          "end": 17.52
+        },
+        {
+          "word": "cycle",
+          "start": 17.52,
+          "end": 17.78
+        },
+        {
+          "word": "repeats",
+          "start": 17.78,
+          "end": 18.32
+        },
+        {
+          "word": "getting",
+          "start": 18.74,
+          "end": 18.8
+        },
+        {
+          "word": "better",
+          "start": 18.8,
+          "end": 19.1
+        },
+        {
+          "word": "each",
+          "start": 19.1,
+          "end": 19.56
+        },
+        {
+          "word": "iteration",
+          "start": 19.56,
+          "end": 19.98
+        }
+      ],
+      "segments": [
+        {
+          "text": "The VIBOPS development cycle has four phases.",
+          "start": 0.0,
+          "end": 2.28
+        },
+        {
+          "text": "Envision, where humans define the vision and constraints.",
+          "start": 3.2,
+          "end": 5.96
+        },
+        {
+          "text": "Explore, where human and AI collaborate",
+          "start": 6.78,
+          "end": 8.24
+        },
+        {
+          "text": "to evaluate options.",
+          "start": 8.24,
+          "end": 9.38
+        },
+        {
+          "text": "Execute, where AI implements based on verified boundaries.",
+          "start": 10.4,
+          "end": 12.96
+        },
+        {
+          "text": "And evolve, where we learn and improve continuously.",
+          "start": 13.76,
+          "end": 16.2
+        },
+        {
+          "text": "This cycle repeats, getting better each iteration.",
+          "start": 16.92,
+          "end": 19.98
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Verification-First Development",
+      "duration": 17.68,
+      "words": [
+        {
+          "word": "Proof",
+          "start": 0.0,
+          "end": 0.34
+        },
+        {
+          "word": "beats",
+          "start": 0.34,
+          "end": 0.62
+        },
+        {
+          "word": "progress",
+          "start": 0.62,
+          "end": 1.16
+        },
+        {
+          "word": "In",
+          "start": 1.94,
+          "end": 1.98
+        },
+        {
+          "word": "the",
+          "start": 1.98,
+          "end": 2.14
+        },
+        {
+          "word": "old",
+          "start": 2.14,
+          "end": 2.3
+        },
+        {
+          "word": "way",
+          "start": 2.3,
+          "end": 2.6
+        },
+        {
+          "word": "you",
+          "start": 2.84,
+          "end": 3.06
+        },
+        {
+          "word": "coded",
+          "start": 3.06,
+          "end": 3.22
+        },
+        {
+          "word": "first",
+          "start": 3.22,
+          "end": 3.66
+        },
+        {
+          "word": "and",
+          "start": 3.66,
+          "end": 4.18
+        },
+        {
+          "word": "tested",
+          "start": 4.18,
+          "end": 4.18
+        },
+        {
+          "word": "later",
+          "start": 4.18,
+          "end": 4.56
+        },
+        {
+          "word": "hoping",
+          "start": 5.04,
+          "end": 5.04
+        },
+        {
+          "word": "things",
+          "start": 5.04,
+          "end": 5.38
+        },
+        {
+          "word": "worked",
+          "start": 5.38,
+          "end": 5.7
+        },
+        {
+          "word": "In",
+          "start": 6.44,
+          "end": 6.54
+        },
+        {
+          "word": "the",
+          "start": 6.54,
+          "end": 6.82
+        },
+        {
+          "word": "VIBOPS",
+          "start": 6.82,
+          "end": 7.04
+        },
+        {
+          "word": "way",
+          "start": 7.04,
+          "end": 7.36
+        },
+        {
+          "word": "you",
+          "start": 7.42,
+          "end": 7.72
+        },
+        {
+          "word": "verify",
+          "start": 7.72,
+          "end": 7.96
+        },
+        {
+          "word": "first",
+          "start": 7.96,
+          "end": 8.5
+        },
+        {
+          "word": "and",
+          "start": 8.5,
+          "end": 8.84
+        },
+        {
+          "word": "generate",
+          "start": 8.84,
+          "end": 9.12
+        },
+        {
+          "word": "second",
+          "start": 9.12,
+          "end": 9.64
+        },
+        {
+          "word": "Tests",
+          "start": 10.48,
+          "end": 10.48
+        },
+        {
+          "word": "and",
+          "start": 10.48,
+          "end": 11.3
+        },
+        {
+          "word": "specifications",
+          "start": 11.3,
+          "end": 11.3
+        },
+        {
+          "word": "come",
+          "start": 11.3,
+          "end": 11.7
+        },
+        {
+          "word": "before",
+          "start": 11.7,
+          "end": 12.0
+        },
+        {
+          "word": "implementation",
+          "start": 12.0,
+          "end": 12.6
+        },
+        {
+          "word": "This",
+          "start": 13.22,
+          "end": 13.38
+        },
+        {
+          "word": "isn't",
+          "start": 13.38,
+          "end": 13.62
+        },
+        {
+          "word": "slower",
+          "start": 13.62,
+          "end": 14.0
+        },
+        {
+          "word": "it's",
+          "start": 14.26,
+          "end": 14.62
+        },
+        {
+          "word": "faster",
+          "start": 14.62,
+          "end": 15.0
+        },
+        {
+          "word": "because",
+          "start": 15.38,
+          "end": 15.52
+        },
+        {
+          "word": "you",
+          "start": 15.52,
+          "end": 15.82
+        },
+        {
+          "word": "catch",
+          "start": 15.82,
+          "end": 15.92
+        },
+        {
+          "word": "problems",
+          "start": 15.92,
+          "end": 16.42
+        },
+        {
+          "word": "before",
+          "start": 16.42,
+          "end": 16.8
+        },
+        {
+          "word": "they're",
+          "start": 16.8,
+          "end": 17.28
+        },
+        {
+          "word": "built",
+          "start": 17.28,
+          "end": 17.28
+        }
+      ],
+      "segments": [
+        {
+          "text": "Proof beats progress.",
+          "start": 0.0,
+          "end": 1.16
+        },
+        {
+          "text": "In the old way, you coded first and tested later,",
+          "start": 1.94,
+          "end": 4.56
+        },
+        {
+          "text": "hoping things worked.",
+          "start": 5.04,
+          "end": 5.7
+        },
+        {
+          "text": "In the VIBOPS way, you verify first and generate second.",
+          "start": 6.44,
+          "end": 9.64
+        },
+        {
+          "text": "Tests and specifications come before implementation.",
+          "start": 10.48,
+          "end": 12.6
+        },
+        {
+          "text": "This isn't slower, it's faster, because you catch problems",
+          "start": 13.22,
+          "end": 16.42
+        },
+        {
+          "text": "before they're built.",
+          "start": 16.42,
+          "end": 17.28
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "The 5-Phase Journey",
+      "duration": 22.56,
+      "words": [
+        {
+          "word": "This",
+          "start": 0.0,
+          "end": 0.26
+        },
+        {
+          "word": "repo",
+          "start": 0.26,
+          "end": 0.52
+        },
+        {
+          "word": "takes",
+          "start": 0.52,
+          "end": 0.82
+        },
+        {
+          "word": "you",
+          "start": 0.82,
+          "end": 1.02
+        },
+        {
+          "word": "through",
+          "start": 1.02,
+          "end": 1.16
+        },
+        {
+          "word": "five",
+          "start": 1.16,
+          "end": 1.56
+        },
+        {
+          "word": "phases",
+          "start": 1.56,
+          "end": 1.98
+        },
+        {
+          "word": "Phase",
+          "start": 2.72,
+          "end": 2.72
+        },
+        {
+          "word": "one",
+          "start": 2.72,
+          "end": 3.06
+        },
+        {
+          "word": "absorb",
+          "start": 3.5,
+          "end": 3.7
+        },
+        {
+          "word": "the",
+          "start": 3.7,
+          "end": 3.98
+        },
+        {
+          "word": "philosophy",
+          "start": 3.98,
+          "end": 4.42
+        },
+        {
+          "word": "Phase",
+          "start": 5.12,
+          "end": 5.12
+        },
+        {
+          "word": "two",
+          "start": 5.12,
+          "end": 5.44
+        },
+        {
+          "word": "learn",
+          "start": 5.52,
+          "end": 5.72
+        },
+        {
+          "word": "to",
+          "start": 5.72,
+          "end": 6.14
+        },
+        {
+          "word": "frame",
+          "start": 6.14,
+          "end": 6.14
+        },
+        {
+          "word": "problems",
+          "start": 6.14,
+          "end": 6.54
+        },
+        {
+          "word": "with",
+          "start": 6.54,
+          "end": 6.88
+        },
+        {
+          "word": "executable",
+          "start": 6.88,
+          "end": 7.46
+        },
+        {
+          "word": "acceptance",
+          "start": 7.46,
+          "end": 8.02
+        },
+        {
+          "word": "criteria",
+          "start": 8.02,
+          "end": 8.58
+        },
+        {
+          "word": "Phase",
+          "start": 9.38,
+          "end": 9.38
+        },
+        {
+          "word": "three",
+          "start": 9.38,
+          "end": 9.68
+        },
+        {
+          "word": "model",
+          "start": 9.8,
+          "end": 10.0
+        },
+        {
+          "word": "security",
+          "start": 10.0,
+          "end": 10.46
+        },
+        {
+          "word": "threats",
+          "start": 10.46,
+          "end": 10.76
+        },
+        {
+          "word": "before",
+          "start": 10.76,
+          "end": 11.16
+        },
+        {
+          "word": "writing",
+          "start": 11.16,
+          "end": 11.54
+        },
+        {
+          "word": "code",
+          "start": 11.54,
+          "end": 11.88
+        },
+        {
+          "word": "Phase",
+          "start": 12.74,
+          "end": 12.74
+        },
+        {
+          "word": "four",
+          "start": 12.74,
+          "end": 13.14
+        },
+        {
+          "word": "generate",
+          "start": 13.68,
+          "end": 13.7
+        },
+        {
+          "word": "code",
+          "start": 13.7,
+          "end": 14.02
+        },
+        {
+          "word": "through",
+          "start": 14.02,
+          "end": 14.26
+        },
+        {
+          "word": "AI",
+          "start": 14.26,
+          "end": 14.6
+        },
+        {
+          "word": "partnership",
+          "start": 14.6,
+          "end": 15.06
+        },
+        {
+          "word": "Phase",
+          "start": 15.94,
+          "end": 15.94
+        },
+        {
+          "word": "five",
+          "start": 15.94,
+          "end": 16.38
+        },
+        {
+          "word": "verify",
+          "start": 16.84,
+          "end": 16.9
+        },
+        {
+          "word": "and",
+          "start": 16.9,
+          "end": 17.38
+        },
+        {
+          "word": "observe",
+          "start": 17.38,
+          "end": 17.6
+        },
+        {
+          "word": "with",
+          "start": 17.6,
+          "end": 17.92
+        },
+        {
+          "word": "three",
+          "start": 17.92,
+          "end": 18.22
+        },
+        {
+          "word": "layers",
+          "start": 18.22,
+          "end": 18.42
+        },
+        {
+          "word": "of",
+          "start": 18.42,
+          "end": 19.2
+        },
+        {
+          "word": "validation",
+          "start": 19.2,
+          "end": 19.2
+        },
+        {
+          "word": "Each",
+          "start": 20.0,
+          "end": 20.14
+        },
+        {
+          "word": "phase",
+          "start": 20.14,
+          "end": 20.38
+        },
+        {
+          "word": "has",
+          "start": 20.38,
+          "end": 20.54
+        },
+        {
+          "word": "a",
+          "start": 20.54,
+          "end": 20.86
+        },
+        {
+          "word": "gate",
+          "start": 20.86,
+          "end": 20.9
+        },
+        {
+          "word": "you",
+          "start": 20.9,
+          "end": 21.24
+        },
+        {
+          "word": "must",
+          "start": 21.24,
+          "end": 21.42
+        },
+        {
+          "word": "pass",
+          "start": 21.42,
+          "end": 21.72
+        },
+        {
+          "word": "to",
+          "start": 21.72,
+          "end": 22.08
+        },
+        {
+          "word": "proceed",
+          "start": 22.08,
+          "end": 22.32
+        }
+      ],
+      "segments": [
+        {
+          "text": "This repo takes you through five phases.",
+          "start": 0.0,
+          "end": 1.98
+        },
+        {
+          "text": "Phase one, absorb the philosophy.",
+          "start": 2.72,
+          "end": 4.42
+        },
+        {
+          "text": "Phase two, learn to frame problems",
+          "start": 5.12,
+          "end": 6.54
+        },
+        {
+          "text": "with executable acceptance criteria.",
+          "start": 6.54,
+          "end": 8.58
+        },
+        {
+          "text": "Phase three, model security threats before writing code.",
+          "start": 9.38,
+          "end": 11.88
+        },
+        {
+          "text": "Phase four, generate code through AI partnership.",
+          "start": 12.74,
+          "end": 15.06
+        },
+        {
+          "text": "Phase five, verify and observe",
+          "start": 15.94,
+          "end": 17.6
+        },
+        {
+          "text": "with three layers of validation.",
+          "start": 17.6,
+          "end": 19.2
+        },
+        {
+          "text": "Each phase has a gate you must pass to proceed.",
+          "start": 20.0,
+          "end": 22.32
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Phase 1: Philosophy Foundation",
+      "duration": 18.57,
+      "words": [
+        {
+          "word": "Everyone",
+          "start": 0.0,
+          "end": 0.42
+        },
+        {
+          "word": "starts",
+          "start": 0.42,
+          "end": 0.76
+        },
+        {
+          "word": "at",
+          "start": 0.76,
+          "end": 1.0
+        },
+        {
+          "word": "phase",
+          "start": 1.0,
+          "end": 1.2
+        },
+        {
+          "word": "one",
+          "start": 1.2,
+          "end": 1.52
+        },
+        {
+          "word": "the",
+          "start": 1.84,
+          "end": 2.02
+        },
+        {
+          "word": "philosophy",
+          "start": 2.02,
+          "end": 2.4
+        },
+        {
+          "word": "foundation",
+          "start": 2.4,
+          "end": 2.96
+        },
+        {
+          "word": "You'll",
+          "start": 3.58,
+          "end": 3.86
+        },
+        {
+          "word": "read",
+          "start": 3.86,
+          "end": 3.94
+        },
+        {
+          "word": "the",
+          "start": 3.94,
+          "end": 4.3
+        },
+        {
+          "word": "agentic",
+          "start": 4.3,
+          "end": 4.56
+        },
+        {
+          "word": "development",
+          "start": 4.56,
+          "end": 5.0
+        },
+        {
+          "word": "manifesto",
+          "start": 5.0,
+          "end": 5.98
+        },
+        {
+          "word": "study",
+          "start": 6.58,
+          "end": 6.58
+        },
+        {
+          "word": "how",
+          "start": 6.58,
+          "end": 6.9
+        },
+        {
+          "word": "traditional",
+          "start": 6.9,
+          "end": 7.38
+        },
+        {
+          "word": "and",
+          "start": 7.38,
+          "end": 7.68
+        },
+        {
+          "word": "agentic",
+          "start": 7.68,
+          "end": 8.06
+        },
+        {
+          "word": "approaches",
+          "start": 8.06,
+          "end": 8.4
+        },
+        {
+          "word": "differ",
+          "start": 8.4,
+          "end": 8.74
+        },
+        {
+          "word": "using",
+          "start": 8.74,
+          "end": 9.06
+        },
+        {
+          "word": "real",
+          "start": 9.06,
+          "end": 9.48
+        },
+        {
+          "word": "examples",
+          "start": 9.48,
+          "end": 9.86
+        },
+        {
+          "word": "then",
+          "start": 10.42,
+          "end": 10.82
+        },
+        {
+          "word": "pass",
+          "start": 10.82,
+          "end": 11.18
+        },
+        {
+          "word": "an",
+          "start": 11.18,
+          "end": 11.48
+        },
+        {
+          "word": "interactive",
+          "start": 11.48,
+          "end": 11.84
+        },
+        {
+          "word": "assessment",
+          "start": 11.84,
+          "end": 12.28
+        },
+        {
+          "word": "You",
+          "start": 13.08,
+          "end": 13.22
+        },
+        {
+          "word": "need",
+          "start": 13.22,
+          "end": 13.42
+        },
+        {
+          "word": "80",
+          "start": 13.42,
+          "end": 13.78
+        },
+        {
+          "word": "",
+          "start": 13.78,
+          "end": 13.9
+        },
+        {
+          "word": "to",
+          "start": 13.9,
+          "end": 14.94
+        },
+        {
+          "word": "advance",
+          "start": 14.94,
+          "end": 14.94
+        },
+        {
+          "word": "No",
+          "start": 15.46,
+          "end": 15.62
+        },
+        {
+          "word": "progression",
+          "start": 15.62,
+          "end": 16.02
+        },
+        {
+          "word": "without",
+          "start": 16.02,
+          "end": 16.5
+        },
+        {
+          "word": "verified",
+          "start": 16.5,
+          "end": 17.1
+        },
+        {
+          "word": "understanding",
+          "start": 17.1,
+          "end": 17.7
+        }
+      ],
+      "segments": [
+        {
+          "text": "Everyone starts at phase one, the philosophy foundation.",
+          "start": 0.0,
+          "end": 2.96
+        },
+        {
+          "text": "You'll read the agentic development manifesto,",
+          "start": 3.58,
+          "end": 5.98
+        },
+        {
+          "text": "study how traditional and agentic approaches differ",
+          "start": 6.58,
+          "end": 8.74
+        },
+        {
+          "text": "using real examples, then pass an interactive assessment.",
+          "start": 8.74,
+          "end": 12.28
+        },
+        {
+          "text": "You need 80% to advance.",
+          "start": 13.08,
+          "end": 14.94
+        },
+        {
+          "text": "No progression without verified understanding.",
+          "start": 15.46,
+          "end": 17.7
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Frame, Model, Generate",
+      "duration": 18.04,
+      "words": [
+        {
+          "word": "In",
+          "start": 0.0,
+          "end": 0.44
+        },
+        {
+          "word": "phases",
+          "start": 0.44,
+          "end": 0.46
+        },
+        {
+          "word": "two",
+          "start": 0.46,
+          "end": 0.8
+        },
+        {
+          "word": "through",
+          "start": 0.8,
+          "end": 1.02
+        },
+        {
+          "word": "four",
+          "start": 1.02,
+          "end": 1.4
+        },
+        {
+          "word": "you",
+          "start": 1.68,
+          "end": 1.8
+        },
+        {
+          "word": "learn",
+          "start": 1.8,
+          "end": 1.98
+        },
+        {
+          "word": "the",
+          "start": 1.98,
+          "end": 2.32
+        },
+        {
+          "word": "core",
+          "start": 2.32,
+          "end": 2.42
+        },
+        {
+          "word": "workflow",
+          "start": 2.42,
+          "end": 2.9
+        },
+        {
+          "word": "Frame",
+          "start": 3.78,
+          "end": 3.78
+        },
+        {
+          "word": "problems",
+          "start": 3.78,
+          "end": 4.18
+        },
+        {
+          "word": "using",
+          "start": 4.18,
+          "end": 4.58
+        },
+        {
+          "word": "given",
+          "start": 4.58,
+          "end": 4.82
+        },
+        {
+          "word": "when",
+          "start": 4.82,
+          "end": 5.12
+        },
+        {
+          "word": "then",
+          "start": 5.12,
+          "end": 5.44
+        },
+        {
+          "word": "acceptance",
+          "start": 5.44,
+          "end": 5.86
+        },
+        {
+          "word": "criteria",
+          "start": 5.86,
+          "end": 6.48
+        },
+        {
+          "word": "instead",
+          "start": 6.48,
+          "end": 6.88
+        },
+        {
+          "word": "of",
+          "start": 6.88,
+          "end": 7.1
+        },
+        {
+          "word": "vague",
+          "start": 7.1,
+          "end": 7.32
+        },
+        {
+          "word": "requirements",
+          "start": 7.32,
+          "end": 8.0
+        },
+        {
+          "word": "Model",
+          "start": 9.58,
+          "end": 9.66
+        },
+        {
+          "word": "threats",
+          "start": 9.66,
+          "end": 9.96
+        },
+        {
+          "word": "using",
+          "start": 9.96,
+          "end": 10.26
+        },
+        {
+          "word": "the",
+          "start": 10.26,
+          "end": 10.64
+        },
+        {
+          "word": "stride",
+          "start": 10.64,
+          "end": 10.74
+        },
+        {
+          "word": "framework",
+          "start": 10.74,
+          "end": 11.12
+        },
+        {
+          "word": "before",
+          "start": 11.12,
+          "end": 11.54
+        },
+        {
+          "word": "any",
+          "start": 11.54,
+          "end": 11.9
+        },
+        {
+          "word": "code",
+          "start": 11.9,
+          "end": 12.08
+        },
+        {
+          "word": "is",
+          "start": 12.08,
+          "end": 12.7
+        },
+        {
+          "word": "generated",
+          "start": 12.7,
+          "end": 12.7
+        },
+        {
+          "word": "Then",
+          "start": 13.28,
+          "end": 13.54
+        },
+        {
+          "word": "partner",
+          "start": 13.54,
+          "end": 13.74
+        },
+        {
+          "word": "with",
+          "start": 13.74,
+          "end": 14.06
+        },
+        {
+          "word": "AI",
+          "start": 14.06,
+          "end": 14.22
+        },
+        {
+          "word": "to",
+          "start": 14.22,
+          "end": 14.58
+        },
+        {
+          "word": "generate",
+          "start": 14.58,
+          "end": 14.78
+        },
+        {
+          "word": "code",
+          "start": 14.78,
+          "end": 15.12
+        },
+        {
+          "word": "within",
+          "start": 15.12,
+          "end": 15.42
+        },
+        {
+          "word": "verified",
+          "start": 15.42,
+          "end": 16.0
+        },
+        {
+          "word": "secure",
+          "start": 16.58,
+          "end": 16.58
+        },
+        {
+          "word": "boundaries",
+          "start": 16.58,
+          "end": 16.92
+        }
+      ],
+      "segments": [
+        {
+          "text": "In phases two through four, you learn the core workflow.",
+          "start": 0.0,
+          "end": 2.9
+        },
+        {
+          "text": "Frame problems using given when then acceptance criteria",
+          "start": 3.78,
+          "end": 6.48
+        },
+        {
+          "text": "instead of vague requirements.",
+          "start": 6.48,
+          "end": 8.0
+        },
+        {
+          "text": "Model threats using the stride framework",
+          "start": 9.58,
+          "end": 11.12
+        },
+        {
+          "text": "before any code is generated.",
+          "start": 11.12,
+          "end": 12.7
+        },
+        {
+          "text": "Then partner with AI to generate code",
+          "start": 13.28,
+          "end": 15.12
+        },
+        {
+          "text": "within verified, secure boundaries.",
+          "start": 15.12,
+          "end": 16.92
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Verify & Observe",
+      "duration": 20.95,
+      "words": [
+        {
+          "word": "Phase",
+          "start": 0.0,
+          "end": 0.36
+        },
+        {
+          "word": "five",
+          "start": 0.36,
+          "end": 0.68
+        },
+        {
+          "word": "is",
+          "start": 0.68,
+          "end": 0.86
+        },
+        {
+          "word": "where",
+          "start": 0.86,
+          "end": 0.98
+        },
+        {
+          "word": "it",
+          "start": 0.98,
+          "end": 1.1
+        },
+        {
+          "word": "all",
+          "start": 1.1,
+          "end": 1.38
+        },
+        {
+          "word": "comes",
+          "start": 1.38,
+          "end": 1.5
+        },
+        {
+          "word": "together",
+          "start": 1.5,
+          "end": 1.88
+        },
+        {
+          "word": "Three",
+          "start": 2.94,
+          "end": 2.98
+        },
+        {
+          "word": "verification",
+          "start": 2.98,
+          "end": 3.58
+        },
+        {
+          "word": "layers",
+          "start": 3.58,
+          "end": 4.02
+        },
+        {
+          "word": "Security",
+          "start": 5.14,
+          "end": 5.14
+        },
+        {
+          "word": "static",
+          "start": 6.0,
+          "end": 6.0
+        },
+        {
+          "word": "analysis",
+          "start": 6.0,
+          "end": 6.42
+        },
+        {
+          "word": "secret",
+          "start": 6.82,
+          "end": 7.04
+        },
+        {
+          "word": "scanning",
+          "start": 7.04,
+          "end": 7.4
+        },
+        {
+          "word": "dependency",
+          "start": 8.06,
+          "end": 8.06
+        },
+        {
+          "word": "audits",
+          "start": 8.06,
+          "end": 8.56
+        },
+        {
+          "word": "quality",
+          "start": 9.38,
+          "end": 9.38
+        },
+        {
+          "word": "unit",
+          "start": 9.88,
+          "end": 9.92
+        },
+        {
+          "word": "tests",
+          "start": 9.92,
+          "end": 10.2
+        },
+        {
+          "word": "integration",
+          "start": 10.76,
+          "end": 10.76
+        },
+        {
+          "word": "tests",
+          "start": 10.76,
+          "end": 11.16
+        },
+        {
+          "word": "end",
+          "start": 11.48,
+          "end": 11.52
+        },
+        {
+          "word": "to",
+          "start": 11.52,
+          "end": 11.8
+        },
+        {
+          "word": "end",
+          "start": 11.8,
+          "end": 11.8
+        },
+        {
+          "word": "coverage",
+          "start": 11.8,
+          "end": 12.16
+        },
+        {
+          "word": "deployment",
+          "start": 13.06,
+          "end": 13.06
+        },
+        {
+          "word": "health",
+          "start": 13.38,
+          "end": 13.5
+        },
+        {
+          "word": "checks",
+          "start": 13.5,
+          "end": 13.82
+        },
+        {
+          "word": "canary",
+          "start": 14.34,
+          "end": 14.34
+        },
+        {
+          "word": "releases",
+          "start": 14.34,
+          "end": 14.86
+        },
+        {
+          "word": "rollback",
+          "start": 15.22,
+          "end": 15.42
+        },
+        {
+          "word": "testing",
+          "start": 15.42,
+          "end": 15.78
+        },
+        {
+          "word": "Remember",
+          "start": 16.5,
+          "end": 16.88
+        },
+        {
+          "word": "shipping",
+          "start": 17.14,
+          "end": 17.26
+        },
+        {
+          "word": "code",
+          "start": 17.26,
+          "end": 17.58
+        },
+        {
+          "word": "is",
+          "start": 17.58,
+          "end": 17.86
+        },
+        {
+          "word": "easy",
+          "start": 17.86,
+          "end": 18.08
+        },
+        {
+          "word": "Shipping",
+          "start": 18.62,
+          "end": 18.62
+        },
+        {
+          "word": "verified",
+          "start": 18.62,
+          "end": 19.12
+        },
+        {
+          "word": "code",
+          "start": 19.12,
+          "end": 19.36
+        },
+        {
+          "word": "is",
+          "start": 19.36,
+          "end": 19.52
+        },
+        {
+          "word": "the",
+          "start": 19.52,
+          "end": 19.68
+        },
+        {
+          "word": "only",
+          "start": 19.68,
+          "end": 19.88
+        },
+        {
+          "word": "part",
+          "start": 19.88,
+          "end": 20.06
+        },
+        {
+          "word": "that",
+          "start": 20.06,
+          "end": 20.6
+        },
+        {
+          "word": "matters",
+          "start": 20.6,
+          "end": 20.6
+        }
+      ],
+      "segments": [
+        {
+          "text": "Phase five is where it all comes together.",
+          "start": 0.0,
+          "end": 1.88
+        },
+        {
+          "text": "Three verification layers.",
+          "start": 2.94,
+          "end": 4.02
+        },
+        {
+          "text": "Security, static analysis, secret scanning,",
+          "start": 5.14,
+          "end": 7.4
+        },
+        {
+          "text": "dependency audits, quality, unit tests,",
+          "start": 8.06,
+          "end": 10.2
+        },
+        {
+          "text": "integration tests, end-to-end coverage,",
+          "start": 10.76,
+          "end": 12.16
+        },
+        {
+          "text": "deployment, health checks, canary releases,",
+          "start": 13.06,
+          "end": 14.86
+        },
+        {
+          "text": "rollback testing.",
+          "start": 15.22,
+          "end": 15.78
+        },
+        {
+          "text": "Remember, shipping code is easy.",
+          "start": 16.5,
+          "end": 18.08
+        },
+        {
+          "text": "Shipping verified code is the only part that matters.",
+          "start": 18.62,
+          "end": 20.6
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Getting Started",
+      "duration": 19.15,
+      "words": [
+        {
+          "word": "Getting",
+          "start": 0.0,
+          "end": 0.28
+        },
+        {
+          "word": "started",
+          "start": 0.28,
+          "end": 0.6
+        },
+        {
+          "word": "is",
+          "start": 0.6,
+          "end": 0.9
+        },
+        {
+          "word": "simple",
+          "start": 0.9,
+          "end": 1.22
+        },
+        {
+          "word": "Clone",
+          "start": 1.92,
+          "end": 1.92
+        },
+        {
+          "word": "the",
+          "start": 1.92,
+          "end": 2.36
+        },
+        {
+          "word": "repo",
+          "start": 2.36,
+          "end": 2.36
+        },
+        {
+          "word": "run",
+          "start": 3.08,
+          "end": 3.1
+        },
+        {
+          "word": "the",
+          "start": 3.1,
+          "end": 3.4
+        },
+        {
+          "word": "on",
+          "start": 3.4,
+          "end": 3.64
+        },
+        {
+          "word": "board",
+          "start": 3.64,
+          "end": 3.64
+        },
+        {
+          "word": "script",
+          "start": 3.64,
+          "end": 4.08
+        },
+        {
+          "word": "and",
+          "start": 4.2,
+          "end": 4.52
+        },
+        {
+          "word": "choose",
+          "start": 4.52,
+          "end": 4.74
+        },
+        {
+          "word": "Start",
+          "start": 4.74,
+          "end": 5.1
+        },
+        {
+          "word": "Vibops",
+          "start": 5.1,
+          "end": 5.56
+        },
+        {
+          "word": "Tutorial",
+          "start": 5.56,
+          "end": 6.04
+        },
+        {
+          "word": "from",
+          "start": 6.04,
+          "end": 6.32
+        },
+        {
+          "word": "the",
+          "start": 6.32,
+          "end": 6.56
+        },
+        {
+          "word": "interactive",
+          "start": 6.56,
+          "end": 6.94
+        },
+        {
+          "word": "menu",
+          "start": 6.94,
+          "end": 7.3
+        },
+        {
+          "word": "The",
+          "start": 8.14,
+          "end": 8.32
+        },
+        {
+          "word": "system",
+          "start": 8.32,
+          "end": 8.58
+        },
+        {
+          "word": "tracks",
+          "start": 8.58,
+          "end": 8.88
+        },
+        {
+          "word": "your",
+          "start": 8.88,
+          "end": 9.62
+        },
+        {
+          "word": "progress",
+          "start": 9.62,
+          "end": 9.62
+        },
+        {
+          "word": "enforces",
+          "start": 10.06,
+          "end": 10.36
+        },
+        {
+          "word": "gates",
+          "start": 10.36,
+          "end": 10.78
+        },
+        {
+          "word": "and",
+          "start": 11.0,
+          "end": 11.38
+        },
+        {
+          "word": "guides",
+          "start": 11.38,
+          "end": 11.38
+        },
+        {
+          "word": "you",
+          "start": 11.38,
+          "end": 11.62
+        },
+        {
+          "word": "through",
+          "start": 11.62,
+          "end": 11.74
+        },
+        {
+          "word": "each",
+          "start": 11.74,
+          "end": 12.14
+        },
+        {
+          "word": "phase",
+          "start": 12.14,
+          "end": 12.4
+        },
+        {
+          "word": "at",
+          "start": 12.4,
+          "end": 12.56
+        },
+        {
+          "word": "your",
+          "start": 12.56,
+          "end": 12.76
+        },
+        {
+          "word": "own",
+          "start": 12.76,
+          "end": 13.26
+        },
+        {
+          "word": "pace",
+          "start": 13.26,
+          "end": 13.32
+        },
+        {
+          "word": "The",
+          "start": 13.98,
+          "end": 14.22
+        },
+        {
+          "word": "methodology",
+          "start": 14.22,
+          "end": 14.62
+        },
+        {
+          "word": "is",
+          "start": 14.62,
+          "end": 14.94
+        },
+        {
+          "word": "AI",
+          "start": 14.94,
+          "end": 15.24
+        },
+        {
+          "word": "agnostic",
+          "start": 15.24,
+          "end": 15.74
+        },
+        {
+          "word": "but",
+          "start": 16.1,
+          "end": 16.34
+        },
+        {
+          "word": "this",
+          "start": 16.34,
+          "end": 16.68
+        },
+        {
+          "word": "repo",
+          "start": 16.68,
+          "end": 16.8
+        },
+        {
+          "word": "is",
+          "start": 16.8,
+          "end": 17.16
+        },
+        {
+          "word": "built",
+          "start": 17.16,
+          "end": 17.34
+        },
+        {
+          "word": "natively",
+          "start": 17.34,
+          "end": 17.96
+        },
+        {
+          "word": "on",
+          "start": 17.96,
+          "end": 18.32
+        },
+        {
+          "word": "Clawed",
+          "start": 18.32,
+          "end": 18.58
+        },
+        {
+          "word": "code",
+          "start": 18.58,
+          "end": 18.9
+        }
+      ],
+      "segments": [
+        {
+          "text": "Getting started is simple. Clone the repo, run the on-board script, and choose Start",
+          "start": 0.0,
+          "end": 5.1
+        },
+        {
+          "text": "Vibops Tutorial from the interactive menu. The system tracks your progress, enforces",
+          "start": 5.1,
+          "end": 10.36
+        },
+        {
+          "text": "gates, and guides you through each phase at your own pace. The methodology is AI-agnostic,",
+          "start": 10.36,
+          "end": 15.74
+        },
+        {
+          "text": "but this repo is built natively on Clawed code.",
+          "start": 16.1,
+          "end": 18.9
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "The Toolkit",
+      "duration": 19.96,
+      "words": [
+        {
+          "word": "The",
+          "start": 0.0,
+          "end": 0.26
+        },
+        {
+          "word": "repo",
+          "start": 0.26,
+          "end": 0.42
+        },
+        {
+          "word": "comes",
+          "start": 0.42,
+          "end": 0.72
+        },
+        {
+          "word": "loaded",
+          "start": 0.72,
+          "end": 0.96
+        },
+        {
+          "word": "with",
+          "start": 0.96,
+          "end": 1.72
+        },
+        {
+          "word": "tools",
+          "start": 1.72,
+          "end": 1.72
+        },
+        {
+          "word": "built",
+          "start": 2.26,
+          "end": 2.34
+        },
+        {
+          "word": "in",
+          "start": 2.34,
+          "end": 2.5
+        },
+        {
+          "word": "verification",
+          "start": 2.5,
+          "end": 3.12
+        },
+        {
+          "word": "pipelines",
+          "start": 3.12,
+          "end": 3.6
+        },
+        {
+          "word": "for",
+          "start": 3.6,
+          "end": 3.94
+        },
+        {
+          "word": "security",
+          "start": 3.94,
+          "end": 4.4
+        },
+        {
+          "word": "quality",
+          "start": 5.04,
+          "end": 5.04
+        },
+        {
+          "word": "and",
+          "start": 5.4,
+          "end": 6.08
+        },
+        {
+          "word": "deployment",
+          "start": 6.08,
+          "end": 6.24
+        },
+        {
+          "word": "JSON",
+          "start": 6.82,
+          "end": 6.98
+        },
+        {
+          "word": "based",
+          "start": 6.98,
+          "end": 7.28
+        },
+        {
+          "word": "progress",
+          "start": 7.28,
+          "end": 7.7
+        },
+        {
+          "word": "tracking",
+          "start": 7.7,
+          "end": 8.02
+        },
+        {
+          "word": "that",
+          "start": 8.02,
+          "end": 8.38
+        },
+        {
+          "word": "remembers",
+          "start": 8.38,
+          "end": 8.64
+        },
+        {
+          "word": "where",
+          "start": 8.64,
+          "end": 8.92
+        },
+        {
+          "word": "you",
+          "start": 8.92,
+          "end": 9.08
+        },
+        {
+          "word": "left",
+          "start": 9.08,
+          "end": 9.32
+        },
+        {
+          "word": "off",
+          "start": 9.32,
+          "end": 9.66
+        },
+        {
+          "word": "a",
+          "start": 10.18,
+          "end": 10.42
+        },
+        {
+          "word": "daily",
+          "start": 10.42,
+          "end": 10.56
+        },
+        {
+          "word": "checklist",
+          "start": 10.56,
+          "end": 11.02
+        },
+        {
+          "word": "for",
+          "start": 11.02,
+          "end": 11.38
+        },
+        {
+          "word": "VibOp's",
+          "start": 11.38,
+          "end": 11.8
+        },
+        {
+          "word": "practices",
+          "start": 11.8,
+          "end": 12.26
+        },
+        {
+          "word": "and",
+          "start": 12.98,
+          "end": 13.36
+        },
+        {
+          "word": "Cloud",
+          "start": 13.36,
+          "end": 13.36
+        },
+        {
+          "word": "Code",
+          "start": 13.36,
+          "end": 13.7
+        },
+        {
+          "word": "integration",
+          "start": 13.7,
+          "end": 14.18
+        },
+        {
+          "word": "Cloud",
+          "start": 14.98,
+          "end": 14.98
+        },
+        {
+          "word": "md",
+          "start": 14.98,
+          "end": 15.58
+        },
+        {
+          "word": "conventions",
+          "start": 15.58,
+          "end": 16.16
+        },
+        {
+          "word": "agentic",
+          "start": 16.8,
+          "end": 17.06
+        },
+        {
+          "word": "workflows",
+          "start": 17.06,
+          "end": 17.52
+        },
+        {
+          "word": "and",
+          "start": 17.76,
+          "end": 17.94
+        },
+        {
+          "word": "project",
+          "start": 17.94,
+          "end": 18.28
+        },
+        {
+          "word": "setup",
+          "start": 18.28,
+          "end": 18.58
+        },
+        {
+          "word": "scripts",
+          "start": 18.58,
+          "end": 18.92
+        },
+        {
+          "word": "baked",
+          "start": 18.92,
+          "end": 19.18
+        },
+        {
+          "word": "right",
+          "start": 19.18,
+          "end": 19.56
+        },
+        {
+          "word": "in",
+          "start": 19.56,
+          "end": 19.72
+        }
+      ],
+      "segments": [
+        {
+          "text": "The repo comes loaded with tools, built-in verification pipelines for security, quality,",
+          "start": 0.0,
+          "end": 5.04
+        },
+        {
+          "text": "and deployment, JSON-based progress tracking that remembers where you left off, a daily",
+          "start": 5.4,
+          "end": 10.56
+        },
+        {
+          "text": "checklist for VibOp's practices, and Cloud Code integration, Cloud.md conventions, agentic",
+          "start": 10.56,
+          "end": 17.06
+        },
+        {
+          "text": "workflows, and project setup scripts baked right in.",
+          "start": 17.06,
+          "end": 19.72
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Call to Action",
+      "duration": 12.67,
+      "words": [
+        {
+          "word": "Start",
+          "start": 0.0,
+          "end": 0.34
+        },
+        {
+          "word": "your",
+          "start": 0.34,
+          "end": 0.52
+        },
+        {
+          "word": "agentic",
+          "start": 0.52,
+          "end": 0.94
+        },
+        {
+          "word": "development",
+          "start": 0.94,
+          "end": 1.36
+        },
+        {
+          "word": "journey",
+          "start": 1.36,
+          "end": 1.62
+        },
+        {
+          "word": "today",
+          "start": 1.62,
+          "end": 2.04
+        },
+        {
+          "word": "clone",
+          "start": 2.4,
+          "end": 2.4
+        },
+        {
+          "word": "the",
+          "start": 2.4,
+          "end": 2.7
+        },
+        {
+          "word": "repo",
+          "start": 2.7,
+          "end": 2.88
+        },
+        {
+          "word": "run",
+          "start": 3.38,
+          "end": 3.38
+        },
+        {
+          "word": "the",
+          "start": 3.38,
+          "end": 3.68
+        },
+        {
+          "word": "on",
+          "start": 3.68,
+          "end": 3.84
+        },
+        {
+          "word": "board",
+          "start": 3.84,
+          "end": 3.92
+        },
+        {
+          "word": "script",
+          "start": 3.92,
+          "end": 4.32
+        },
+        {
+          "word": "and",
+          "start": 4.5,
+          "end": 4.64
+        },
+        {
+          "word": "transform",
+          "start": 4.64,
+          "end": 5.06
+        },
+        {
+          "word": "how",
+          "start": 5.06,
+          "end": 5.32
+        },
+        {
+          "word": "you",
+          "start": 5.32,
+          "end": 5.52
+        },
+        {
+          "word": "build",
+          "start": 5.52,
+          "end": 5.7
+        },
+        {
+          "word": "software",
+          "start": 5.7,
+          "end": 6.22
+        },
+        {
+          "word": "The",
+          "start": 7.37,
+          "end": 7.68
+        },
+        {
+          "word": "bottleneck",
+          "start": 7.68,
+          "end": 8.1
+        },
+        {
+          "word": "has",
+          "start": 8.1,
+          "end": 8.68
+        },
+        {
+          "word": "shifted",
+          "start": 8.68,
+          "end": 8.68
+        },
+        {
+          "word": "Your",
+          "start": 9.28,
+          "end": 9.44
+        },
+        {
+          "word": "judgment",
+          "start": 9.44,
+          "end": 9.74
+        },
+        {
+          "word": "is",
+          "start": 9.74,
+          "end": 10.04
+        },
+        {
+          "word": "the",
+          "start": 10.04,
+          "end": 10.34
+        },
+        {
+          "word": "superpower",
+          "start": 10.34,
+          "end": 10.74
+        },
+        {
+          "word": "Welcome",
+          "start": 11.52,
+          "end": 11.58
+        },
+        {
+          "word": "to",
+          "start": 11.58,
+          "end": 11.9
+        },
+        {
+          "word": "VibeOps",
+          "start": 11.9,
+          "end": 12.38
+        }
+      ],
+      "segments": [
+        {
+          "text": "Start your agentic development journey today, clone the repo, run the on-board script, and",
+          "start": 0.0,
+          "end": 4.64
+        },
+        {
+          "text": "transform how you build software.",
+          "start": 4.64,
+          "end": 6.22
+        },
+        {
+          "text": "The bottleneck has shifted.",
+          "start": 7.56,
+          "end": 8.68
+        },
+        {
+          "text": "Your judgment is the superpower.",
+          "start": 9.28,
+          "end": 10.74
+        },
+        {
+          "text": "Welcome to VibeOps.",
+          "start": 11.52,
+          "end": 12.38
+        }
+      ]
+    }
+  ]
+}

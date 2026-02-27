@@ -1,0 +1,16 @@
+# Editor swap/backup files
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Presentation build artifacts
+presentation/.venv/
+presentation/vibeops-deploy.zip
+
+# OS
+.DS_Store

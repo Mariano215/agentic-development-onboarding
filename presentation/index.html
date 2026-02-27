@@ -1,0 +1,2038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeOps: Agentic Development Onboarding</title>
+
+    <!-- SEO & Social Sharing -->
+    <meta name="description" content="VibeOps — a new approach to software development where human judgment, not coding speed, is the superpower. Learn the 5-phase agentic development methodology.">
+    <meta name="author" content="Mariano Mattei">
+
+    <!-- Open Graph (LinkedIn, Facebook, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="VibeOps: Agentic Development Onboarding">
+    <meta property="og:description" content="We are not building AI to replace developers. We are building AI to make developers superhuman. Learn the 5-phase VibeOps methodology for agentic development.">
+    <meta property="og:url" content="https://matteisystems.com/vibeops/">
+    <meta property="og:image" content="https://matteisystems.com/vibeops/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Mattei Systems">
+
+    <!-- Twitter/X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VibeOps: Agentic Development Onboarding">
+    <meta name="twitter:description" content="We are not building AI to replace developers. We are building AI to make developers superhuman.">
+    <meta name="twitter:image" content="https://matteisystems.com/vibeops/og-image.png">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===========================================
+           THEME
+           =========================================== */
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --bg-card: rgba(255, 255, 255, 0.04);
+            --bg-card-hover: rgba(255, 255, 255, 0.08);
+            --text-primary: #f0f4ff;
+            --text-secondary: #8892b0;
+            --text-muted: #5a6380;
+            --accent-blue: #00d4ff;
+            --accent-purple: #8b5cf6;
+            --accent-blue-glow: rgba(0, 212, 255, 0.3);
+            --accent-purple-glow: rgba(139, 92, 246, 0.3);
+            --accent-gradient: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+
+            --font-display: 'Clash Display', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --title-size: clamp(1.8rem, 5vw, 4rem);
+            --h2-size: clamp(1.3rem, 3.5vw, 2.5rem);
+            --h3-size: clamp(1rem, 2.2vw, 1.5rem);
+            --body-size: clamp(0.75rem, 1.4vw, 1.05rem);
+            --small-size: clamp(0.65rem, 1vw, 0.85rem);
+            --code-size: clamp(0.65rem, 1.1vw, 0.9rem);
+            --slide-padding: clamp(1.5rem, 5vw, 5rem);
+            --content-gap: clamp(0.75rem, 2vw, 2rem);
+            --element-gap: clamp(0.4rem, 1vw, 1rem);
+
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        /* ===========================================
+           CANVAS BACKGROUND
+           =========================================== */
+        #grid-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        /* ===========================================
+           SLIDE SYSTEM — JS-controlled transitions
+           All slides stacked, only active one visible
+           =========================================== */
+        .slide-deck {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: var(--slide-padding);
+            opacity: 0;
+            visibility: hidden;
+            transition: none;
+            will-change: opacity, transform;
+        }
+
+        /* --- Slide entrance animations --- */
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            z-index: 10;
+        }
+
+        .slide.enter-fade {
+            animation: enterFade 0.8s var(--ease-out-expo) forwards;
+        }
+        .slide.enter-zoom {
+            animation: enterZoom 0.9s var(--ease-out-expo) forwards;
+        }
+        .slide.enter-slide-up {
+            animation: enterSlideUp 0.7s var(--ease-out-expo) forwards;
+        }
+        .slide.enter-split {
+            animation: enterSplit 0.8s var(--ease-out-expo) forwards;
+        }
+        .slide.enter-rotate {
+            animation: enterRotate 0.9s var(--ease-out-expo) forwards;
+        }
+        .slide.enter-blur {
+            animation: enterBlur 0.7s var(--ease-out-expo) forwards;
+        }
+
+        .slide.exit-fade {
+            animation: exitFade 0.5s ease forwards;
+            z-index: 5;
+        }
+        .slide.exit-zoom {
+            animation: exitZoom 0.5s ease forwards;
+            z-index: 5;
+        }
+        .slide.exit-slide-down {
+            animation: exitSlideDown 0.5s ease forwards;
+            z-index: 5;
+        }
+
+        @keyframes enterFade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes enterZoom {
+            from { opacity: 0; transform: scale(0.88); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes enterSlideUp {
+            from { opacity: 0; transform: translateY(60px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes enterSplit {
+            from { opacity: 0; transform: scaleY(0.92) translateY(20px); }
+            to { opacity: 1; transform: scaleY(1) translateY(0); }
+        }
+        @keyframes enterRotate {
+            from { opacity: 0; transform: perspective(800px) rotateX(8deg) translateY(30px); }
+            to { opacity: 1; transform: perspective(800px) rotateX(0deg) translateY(0); }
+        }
+        @keyframes enterBlur {
+            from { opacity: 0; filter: blur(15px); }
+            to { opacity: 1; filter: blur(0); }
+        }
+        @keyframes exitFade {
+            from { opacity: 1; }
+            to { opacity: 0; visibility: hidden; }
+        }
+        @keyframes exitZoom {
+            from { opacity: 1; transform: scale(1); }
+            to { opacity: 0; transform: scale(1.08); visibility: hidden; }
+        }
+        @keyframes exitSlideDown {
+            from { opacity: 1; transform: translateY(0); }
+            to { opacity: 0; transform: translateY(-40px); visibility: hidden; }
+        }
+
+        .slide-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: min(90vw, 1100px);
+            max-height: 100%;
+            overflow: hidden;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* ===========================================
+           CUE-DRIVEN ANIMATIONS
+           Elements start hidden; .cue-active triggers
+           =========================================== */
+        [data-cue] {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo), filter 0.7s ease;
+            will-change: opacity, transform;
+        }
+
+        [data-cue].cue-active {
+            opacity: 1;
+            transform: translateY(0) translateX(0) scale(1) rotate(0deg);
+            filter: blur(0);
+        }
+
+        /* Variant: slide from left */
+        [data-cue-dir="left"] {
+            transform: translateX(-40px);
+        }
+
+        /* Variant: slide from right */
+        [data-cue-dir="right"] {
+            transform: translateX(40px);
+        }
+
+        /* Variant: scale in */
+        [data-cue-dir="scale"] {
+            transform: scale(0.8);
+        }
+
+        /* Variant: blur in */
+        [data-cue-dir="blur"] {
+            transform: translateY(0);
+            filter: blur(12px);
+        }
+
+        /* Emphasis pulse animation */
+        @keyframes emphasisPulse {
+            0%, 100% { filter: drop-shadow(0 0 0px transparent); }
+            50% { filter: drop-shadow(0 0 20px var(--accent-blue-glow)); }
+        }
+
+        .cue-emphasis {
+            animation: emphasisPulse 1.2s ease-in-out;
+        }
+
+        /* Glow highlight for text */
+        @keyframes textGlow {
+            0%, 100% { text-shadow: 0 0 0px transparent; }
+            50% { text-shadow: 0 0 20px var(--accent-blue-glow), 0 0 40px var(--accent-purple-glow); }
+        }
+
+        .cue-glow {
+            animation: textGlow 1.5s ease-in-out;
+        }
+
+        /* Scale bounce */
+        @keyframes scaleBounce {
+            0% { transform: scale(1); }
+            40% { transform: scale(1.08); }
+            100% { transform: scale(1); }
+        }
+
+        .cue-bounce {
+            animation: scaleBounce 0.6s var(--ease-spring);
+        }
+
+        /* Underline draw */
+        @keyframes drawUnderline {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        .cue-underline {
+            position: relative;
+        }
+
+        .cue-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            height: 2px;
+            background: var(--accent-gradient);
+            animation: drawUnderline 0.6s var(--ease-out-expo) forwards;
+        }
+
+        /* Counter animation */
+        @keyframes countPop {
+            0% { transform: scale(0.5); opacity: 0; }
+            60% { transform: scale(1.15); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .cue-count-pop {
+            animation: countPop 0.5s var(--ease-spring);
+        }
+
+        /* Typing cursor */
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .typing-cursor::after {
+            content: '|';
+            color: var(--accent-blue);
+            animation: blink 0.8s step-end infinite;
+            margin-left: 2px;
+        }
+
+        /* Card highlight border sweep */
+        @keyframes borderSweep {
+            0% { border-color: var(--border-subtle); }
+            30% { border-color: var(--accent-blue); box-shadow: 0 0 15px var(--accent-blue-glow); }
+            100% { border-color: rgba(0, 212, 255, 0.15); box-shadow: none; }
+        }
+
+        .cue-border-sweep {
+            animation: borderSweep 1.2s ease;
+        }
+
+        /* Particle burst (via canvas overlay per slide) */
+        .particle-overlay {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        /* ===========================================
+           PROGRESS BAR
+           =========================================== */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--accent-gradient);
+            z-index: 200;
+            transition: width 0.4s ease;
+            box-shadow: 0 0 12px var(--accent-blue-glow);
+        }
+
+        /* ===========================================
+           NAV DOTS
+           =========================================== */
+        .nav-dots {
+            position: fixed;
+            right: clamp(0.75rem, 2vw, 2rem);
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 200;
+        }
+
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            padding: 0;
+        }
+
+        .nav-dot.active {
+            background: var(--accent-blue);
+            box-shadow: 0 0 8px var(--accent-blue-glow);
+            transform: scale(1.5);
+        }
+
+        .nav-dot:hover { background: var(--accent-purple); transform: scale(1.3); }
+
+        /* ===========================================
+           AUDIO CONTROLS
+           =========================================== */
+        .audio-controls {
+            position: fixed;
+            bottom: clamp(1rem, 3vw, 2rem);
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 200;
+            background: rgba(10, 14, 26, 0.9);
+            border: 1px solid var(--border-subtle);
+            border-radius: 40px;
+            padding: 8px 20px;
+            backdrop-filter: blur(12px);
+            transition: opacity 0.3s;
+        }
+
+        .audio-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 18px;
+            padding: 4px;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+        }
+
+        .audio-btn:hover, .audio-btn.active { color: var(--accent-blue); }
+
+        .audio-label {
+            font-family: var(--font-mono);
+            font-size: var(--small-size);
+            color: var(--text-muted);
+            user-select: none;
+            min-width: 30px;
+        }
+
+        .audio-progress-track {
+            width: 140px;
+            height: 4px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 2px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .audio-progress-fill {
+            height: 100%;
+            background: var(--accent-gradient);
+            width: 0%;
+            transition: width 0.1s linear;
+            border-radius: 2px;
+        }
+
+        .slide-counter {
+            font-family: var(--font-mono);
+            font-size: var(--small-size);
+            color: var(--text-muted);
+            min-width: 50px;
+            text-align: center;
+        }
+
+        /* Autoplay indicator */
+        .autoplay-ring {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.1);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .autoplay-ring svg {
+            position: absolute;
+            inset: -2px;
+            transform: rotate(-90deg);
+        }
+
+        .autoplay-ring circle {
+            fill: none;
+            stroke: var(--accent-blue);
+            stroke-width: 2;
+            stroke-dasharray: 78.5;
+            stroke-dashoffset: 78.5;
+            transition: stroke-dashoffset 0.1s linear;
+        }
+
+        /* Start overlay */
+        .start-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 500;
+            background: var(--bg-primary);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            cursor: pointer;
+            transition: opacity 0.6s ease;
+        }
+
+        .start-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .start-overlay h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            font-weight: 600;
+        }
+
+        .start-btn {
+            font-family: var(--font-mono);
+            font-size: var(--body-size);
+            color: var(--bg-primary);
+            background: var(--accent-gradient);
+            border: none;
+            border-radius: 50px;
+            padding: 14px 40px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .start-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px var(--accent-blue-glow);
+        }
+
+        .start-hint {
+            font-size: var(--small-size);
+            color: var(--text-muted);
+        }
+
+        /* ===========================================
+           TYPOGRAPHY
+           =========================================== */
+        .slide-tag {
+            font-family: var(--font-mono);
+            font-size: var(--small-size);
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: var(--element-gap);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: var(--title-size);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: var(--h2-size);
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: var(--content-gap);
+        }
+
+        h3 {
+            font-family: var(--font-display);
+            font-size: var(--h3-size);
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        p, li {
+            font-size: var(--body-size);
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .gradient-text {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: clamp(0.85rem, 1.8vw, 1.25rem);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-top: var(--content-gap);
+            font-style: italic;
+        }
+
+        /* ===========================================
+           CARDS & GRIDS
+           =========================================== */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--content-gap);
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--content-gap);
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--element-gap);
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: clamp(0.75rem, 2vw, 1.5rem);
+            text-align: left;
+            transition: all 0.4s ease;
+        }
+
+        .card h3 { margin-bottom: clamp(0.25rem, 0.5vw, 0.5rem); }
+        .card p { font-size: var(--small-size); color: var(--text-muted); }
+
+        .card-icon {
+            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+            margin-bottom: clamp(0.25rem, 0.5vw, 0.5rem);
+            display: block;
+        }
+
+        .compare-col {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: clamp(1rem, 2.5vw, 2rem);
+            text-align: left;
+        }
+
+        .compare-col.old { border-top: 3px solid var(--danger); }
+        .compare-col.new { border-top: 3px solid var(--success); }
+
+        .compare-col h3 {
+            margin-bottom: var(--element-gap);
+            font-family: var(--font-mono);
+            font-size: var(--small-size);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .compare-col.old h3 { color: var(--danger); }
+        .compare-col.new h3 { color: var(--success); }
+
+        .compare-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.3rem, 0.8vh, 0.6rem);
+        }
+
+        .compare-col li {
+            font-size: var(--small-size);
+            padding-left: 1.4em;
+            position: relative;
+        }
+
+        .compare-col li::before { position: absolute; left: 0; }
+        .compare-col.old li::before { content: "\2717"; color: var(--danger); }
+        .compare-col.new li::before { content: "\2713"; color: var(--success); }
+
+        /* Pillar items */
+        .pillar {
+            display: flex;
+            align-items: flex-start;
+            gap: clamp(0.5rem, 1.5vw, 1rem);
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: clamp(0.6rem, 1.5vw, 1.2rem);
+            text-align: left;
+            transition: all 0.4s ease;
+        }
+
+        .pillar-num {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .pillar h3 { font-size: clamp(0.8rem, 1.5vw, 1.1rem); }
+        .pillar p { font-size: var(--small-size); color: var(--text-muted); margin-top: 2px; }
+
+        /* Phase timeline */
+        .phase-list {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.3rem, 0.8vh, 0.75rem);
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .phase-item {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.5rem, 1.5vw, 1rem);
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: clamp(0.5rem, 1.2vw, 0.9rem) clamp(0.75rem, 2vw, 1.5rem);
+            text-align: left;
+            transition: all 0.4s ease;
+        }
+
+        .phase-num {
+            font-family: var(--font-mono);
+            font-size: var(--small-size);
+            color: var(--accent-blue);
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 6px;
+            padding: 4px 10px;
+            flex-shrink: 0;
+            min-width: 32px;
+            text-align: center;
+        }
+
+        .phase-item h3 { font-size: clamp(0.8rem, 1.4vw, 1rem); flex-shrink: 0; }
+        .phase-item p { font-size: var(--small-size); color: var(--text-muted); }
+        .phase-sep { color: var(--text-muted); margin: 0 4px; }
+
+        /* Quote */
+        .quote {
+            font-family: var(--font-display);
+            font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+            font-weight: 500;
+            color: var(--accent-blue);
+            border-left: 3px solid var(--accent-purple);
+            padding-left: clamp(0.75rem, 2vw, 1.5rem);
+            text-align: left;
+            max-width: 700px;
+        }
+
+        /* ===========================================
+           CYCLE DIAGRAM
+           Outer container holds nodes + labels.
+           Inner ring is centered and smaller, so
+           nodes sit on it without clipping.
+           =========================================== */
+        .cycle-container {
+            position: relative;
+            width: min(440px, 72vw, 50vh);
+            height: min(440px, 72vw, 50vh);
+            margin: 0 auto;
+        }
+
+        /* Ring — centered at 50%,50%, radius = 28% of container */
+        .cycle-ring {
+            position: absolute;
+            top: 22%;
+            left: 22%;
+            width: 56%;
+            height: 56%;
+            border: 2px solid var(--border-subtle);
+            border-radius: 50%;
+            transition: border-color 1s ease;
+        }
+
+        .cycle-ring.spinning::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            border-top-color: var(--accent-blue);
+            border-right-color: var(--accent-purple);
+            animation: cycleSpin 6s linear infinite;
+        }
+
+        @keyframes cycleSpin { to { transform: rotate(360deg); } }
+
+        .cycle-ring.spinning::before {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            border-top-color: rgba(0, 212, 255, 0.15);
+            animation: cycleSpin 8s linear infinite reverse;
+        }
+
+        .cycle-node {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: clamp(90px, 20vw, 130px);
+        }
+
+        .cycle-node-icon {
+            width: clamp(38px, 7vw, 50px);
+            height: clamp(38px, 7vw, 50px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            margin-bottom: 4px;
+            border: 2px solid;
+            transition: all 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        /* Nodes on ring edge — diamond layout at 1:30, 4:30, 7:30, 10:30.
+           Ring center=50%,50% radius=28%. sin(45)=cos(45)≈0.707 → offset=20%.
+           Points: (70,30), (70,70), (30,70), (30,30).
+           Top nodes: translate icon-center onto ring (labels hang below).
+           Bottom nodes: labels above icon via flex column-reverse. */
+
+        /* Envision — 1:30 (top-right) */
+        .cycle-node:nth-child(2) {
+            top: 30%; left: 70%;
+            transform: translate(-50%, -45%);
+        }
+        /* Explore — 4:30 (bottom-right), label above icon */
+        .cycle-node:nth-child(3) {
+            top: 70%; left: 70%;
+            flex-direction: column-reverse;
+            transform: translate(-50%, -55%);
+        }
+        .cycle-node:nth-child(3) .cycle-node-icon { margin-bottom: 0; margin-top: 4px; }
+        .cycle-node:nth-child(3) h3 { order: 2; }
+        .cycle-node:nth-child(3) p { order: 3; }
+
+        /* Execute — 7:30 (bottom-left), label above icon */
+        .cycle-node:nth-child(4) {
+            top: 70%; left: 30%;
+            flex-direction: column-reverse;
+            transform: translate(-50%, -55%);
+        }
+        .cycle-node:nth-child(4) .cycle-node-icon { margin-bottom: 0; margin-top: 4px; }
+        .cycle-node:nth-child(4) h3 { order: 2; }
+        .cycle-node:nth-child(4) p { order: 3; }
+
+        /* Evolve — 10:30 (top-left) */
+        .cycle-node:nth-child(5) {
+            top: 30%; left: 30%;
+            transform: translate(-50%, -45%);
+        }
+
+        .cycle-node:nth-child(2) .cycle-node-icon { background: rgba(0,212,255,0.1); border-color: var(--accent-blue); }
+        .cycle-node:nth-child(3) .cycle-node-icon { background: rgba(139,92,246,0.1); border-color: var(--accent-purple); }
+        .cycle-node:nth-child(4) .cycle-node-icon { background: rgba(16,185,129,0.1); border-color: var(--success); }
+        .cycle-node:nth-child(5) .cycle-node-icon { background: rgba(245,158,11,0.1); border-color: var(--warning); }
+
+        .cycle-node.node-active .cycle-node-icon {
+            box-shadow: 0 0 20px var(--accent-blue-glow);
+            transform: scale(1.15);
+        }
+
+        .cycle-node h3 { font-size: var(--small-size); margin-bottom: 2px; }
+        .cycle-node p { font-size: clamp(0.55rem, 0.9vw, 0.7rem); color: var(--text-muted); }
+
+        /* Arrows sit between nodes, along the ring arcs */
+        .cycle-arrow {
+            position: absolute;
+            color: var(--text-muted);
+            font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .cycle-arrow.arrow-active { opacity: 0.6; }
+
+        /* Arrows at cardinal ring points (midpoints between diamond nodes).
+           Ring edge: top=22%, right=78%, bottom=78%, left=22%. */
+        /* Envision→Explore: 3 o'clock */
+        .cycle-arrow:nth-child(6) { top: 50%; left: 78%; transform: translate(-50%,-50%) rotate(90deg); }
+        /* Explore→Execute: 6 o'clock */
+        .cycle-arrow:nth-child(7) { top: 78%; left: 50%; transform: translate(-50%,-50%) rotate(180deg); }
+        /* Execute→Evolve: 9 o'clock */
+        .cycle-arrow:nth-child(8) { top: 50%; left: 22%; transform: translate(-50%,-50%) rotate(270deg); }
+        /* Evolve→Envision: 12 o'clock */
+        .cycle-arrow:nth-child(9) { top: 22%; left: 50%; transform: translate(-50%,-50%) rotate(0deg); }
+
+        /* ===========================================
+           VERIFY CARDS
+           =========================================== */
+        .verify-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: clamp(0.75rem, 2vw, 1.25rem);
+            text-align: left;
+            transition: all 0.4s ease;
+        }
+
+        .verify-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: var(--element-gap);
+            font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+        }
+
+        .verify-card ul { list-style: none; display: flex; flex-direction: column; gap: clamp(0.2rem, 0.5vh, 0.4rem); }
+        .verify-card li { font-size: var(--small-size); color: var(--text-muted); padding-left: 1em; position: relative; }
+        .verify-card li::before { content: "\203A"; position: absolute; left: 0; color: var(--accent-blue); }
+
+        .verify-card.security { border-top: 3px solid var(--danger); }
+        .verify-card.quality { border-top: 3px solid var(--warning); }
+        .verify-card.deploy { border-top: 3px solid var(--success); }
+
+        /* ===========================================
+           CODE BLOCK
+           =========================================== */
+        .code-block {
+            font-family: var(--font-mono);
+            font-size: var(--code-size);
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: clamp(0.75rem, 2vw, 1.5rem);
+            text-align: left;
+            width: 100%;
+            max-width: 600px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .code-block .prompt { color: var(--success); }
+        .code-block .cmd { color: var(--text-primary); }
+        .code-block .comment { color: var(--text-muted); }
+
+        /* Code lines type-in */
+        .code-line {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .code-line.typing {
+            border-right: 2px solid var(--accent-blue);
+            animation: typeWidth 0.8s steps(40) forwards, blink 0.6s step-end 3;
+            width: 0;
+            display: inline-block;
+        }
+
+        @keyframes typeWidth {
+            to { width: 100%; }
+        }
+
+        /* ===========================================
+           RESPONSIVE
+           =========================================== */
+        @media (max-height: 700px) {
+            :root {
+                --slide-padding: clamp(1rem, 3vw, 2.5rem);
+                --content-gap: clamp(0.5rem, 1.5vw, 1rem);
+                --title-size: clamp(1.5rem, 4.5vw, 2.5rem);
+                --h2-size: clamp(1.1rem, 3vw, 1.75rem);
+            }
+        }
+
+        @media (max-height: 600px) {
+            :root {
+                --slide-padding: clamp(0.75rem, 2.5vw, 1.5rem);
+                --content-gap: clamp(0.4rem, 1vw, 0.75rem);
+                --title-size: clamp(1.25rem, 4vw, 2rem);
+                --body-size: clamp(0.7rem, 1.2vw, 0.9rem);
+            }
+            .nav-dots { display: none; }
+        }
+
+        @media (max-height: 500px) {
+            :root {
+                --slide-padding: clamp(0.5rem, 2vw, 1rem);
+                --title-size: clamp(1rem, 3.5vw, 1.5rem);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            .cycle-container { width: min(340px, 80vw, 48vh); height: min(340px, 80vw, 48vh); }
+        }
+
+        @media (max-width: 600px) {
+            .audio-controls { padding: 6px 14px; gap: 8px; }
+            .audio-progress-track { width: 80px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.2s !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="grid-canvas"></canvas>
+
+<!-- Start overlay — required for autoplay audio policy -->
+<div class="start-overlay" id="startOverlay">
+    <h2><span class="gradient-text">VibeOps</span></h2>
+    <button class="start-btn" id="startBtn">Start Presentation</button>
+    <p class="start-hint">Audio narration will play automatically</p>
+</div>
+
+<div class="progress-bar" id="progressBar"></div>
+<nav class="nav-dots" id="navDots"></nav>
+
+<!-- Audio controls bar -->
+<div class="audio-controls" id="audioControls" style="opacity:0">
+    <button class="audio-btn" id="playPauseBtn" title="Play/Pause">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path id="ppIcon" d="M8 5v14l11-7z"/></svg>
+    </button>
+    <div class="audio-progress-track" id="audioTrack">
+        <div class="audio-progress-fill" id="audioFill"></div>
+    </div>
+    <span class="audio-label" id="timeLabel">0:00</span>
+    <span class="slide-counter" id="slideCounter">1 / 12</span>
+    <div class="autoplay-ring" id="autoplayRing" title="Auto-advance progress">
+        <svg width="28" height="28" viewBox="0 0 28 28">
+            <circle id="autoplayCircle" cx="14" cy="14" r="12.5" />
+        </svg>
+    </div>
+    <button class="audio-btn" id="muteBtn" title="Mute">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path id="muteIcon" d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+    </button>
+</div>
+
+<audio id="slideAudio" preload="auto"></audio>
+
+<!-- ===========================================
+     SLIDE DECK
+     =========================================== -->
+<div class="slide-deck" id="slideDeck">
+
+<!-- SLIDE 1: TITLE -->
+<section class="slide" data-slide="1" data-enter="enter-zoom" data-exit="exit-zoom">
+    <canvas class="particle-overlay" data-particles="burst"></canvas>
+    <div class="slide-content">
+        <p class="slide-tag" data-cue="s1-tag">Agentic Development Onboarding</p>
+        <h1 data-cue="s1-title" style="transition-delay:0.1s">
+            <span class="gradient-text">VibeOps</span>
+        </h1>
+        <p class="tagline" data-cue="s1-line1" data-cue-dir="blur">
+            "We are not building AI to replace developers."
+        </p>
+        <p class="tagline" data-cue="s1-line2" data-cue-dir="blur" style="margin-top:0.25em;font-weight:600;color:var(--text-primary)">
+            "We are building AI to make developers <span class="gradient-text">superhuman</span>."
+        </p>
+        <p style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted)" data-cue="s1-sub" data-cue-dir="blur">
+            A new way to think about software development
+        </p>
+    </div>
+</section>
+
+<!-- SLIDE 2: BOTTLENECK SHIFTED -->
+<section class="slide" data-slide="2" data-enter="enter-slide-up" data-exit="exit-slide-down">
+    <div class="slide-content">
+        <p class="slide-tag" data-cue="s2-tag">The paradigm shift</p>
+        <h2 data-cue="s2-title">The Bottleneck Has <span class="gradient-text">Shifted</span></h2>
+        <div class="grid-2">
+            <div class="compare-col old" data-cue="s2-old" data-cue-dir="left">
+                <h3>Traditional Development</h3>
+                <ul>
+                    <li>Bottleneck: coding speed</li>
+                    <li>"How fast can I implement?"</li>
+                    <li>Humans write every line</li>
+                    <li>Value = lines of code shipped</li>
+                </ul>
+            </div>
+            <div class="compare-col new" data-cue="s2-new" data-cue-dir="right">
+                <h3>Agentic Development</h3>
+                <ul>
+                    <li>Bottleneck: human judgment</li>
+                    <li>"How fast can I verify?"</li>
+                    <li>AI generates, humans decide</li>
+                    <li>Value = quality of decisions</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 3: FOUR PILLARS -->
+<section class="slide" data-slide="3" data-enter="enter-fade" data-exit="exit-fade">
+    <div class="slide-content">
+        <p class="slide-tag" data-cue="s3-tag">The four pillars</p>
+        <h2 data-cue="s3-title">What is <span class="gradient-text">VibeOps</span>?</h2>
+        <div class="grid-4">
+            <div class="pillar" data-cue="s3-p1" data-cue-dir="left">
+                <span class="pillar-num">01</span>
+                <div>
+                    <h3>AI Partnership <span style="color:var(--text-muted)">over</span> Tool Usage</h3>
+                    <p>Thinking partners, not autocomplete</p>
+                </div>
+            </div>
+            <div class="pillar" data-cue="s3-p2" data-cue-dir="right">
+                <span class="pillar-num">02</span>
+                <div>
+                    <h3>Verification <span style="color:var(--text-muted)">over</span> Implementation</h3>
+                    <p>Prove before you build</p>
+                </div>
+            </div>
+            <div class="pillar" data-cue="s3-p3" data-cue-dir="left">
+                <span class="pillar-num">03</span>
+                <div>
+                    <h3>Orchestration <span style="color:var(--text-muted)">over</span> Coding</h3>
+                    <p>Guide systems, don't type everything</p>
+                </div>
+            </div>
+            <div class="pillar" data-cue="s3-p4" data-cue-dir="right">
+                <span class="pillar-num">04</span>
+                <div>
+                    <h3>Emergence <span style="color:var(--text-muted)">over</span> Planning</h3>
+                    <p>Solutions arise through collaboration</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 4: THE CYCLE -->
+<section class="slide" data-slide="4" data-enter="enter-rotate" data-exit="exit-zoom">
+    <div class="slide-content">
+        <p class="slide-tag" data-cue="s4-tag">The development loop</p>
+        <h2 data-cue="s4-title">The VibeOps <span class="gradient-text">Cycle</span></h2>
+        <div class="cycle-container" data-cue="s4-ring" data-cue-dir="scale">
+            <div class="cycle-ring" id="cycleRing"></div>
+            <div class="cycle-node" data-cue="s4-envision" data-cue-dir="scale">
+                <div class="cycle-node-icon">&#x1F3AF;</div>
+                <h3>Envision</h3>
+                <p>Human-led: vision &amp; constraints</p>
+            </div>
+            <div class="cycle-node" data-cue="s4-explore" data-cue-dir="scale">
+                <div class="cycle-node-icon">&#x1F50D;</div>
+                <h3>Explore</h3>
+                <p>Collaborative: options &amp; tradeoffs</p>
+            </div>
+            <div class="cycle-node" data-cue="s4-execute" data-cue-dir="scale">
+                <div class="cycle-node-icon">&#x26A1;</div>
+                <h3>Execute</h3>
+                <p>AI-led: verified implementation</p>
+            </div>
+            <div class="cycle-node" data-cue="s4-evolve" data-cue-dir="scale">
+                <div class="cycle-node-icon">&#x1F331;</div>
+                <h3>Evolve</h3>
+                <p>Continuous: learn &amp; improve</p>
+            </div>
+            <span class="cycle-arrow">&#x279C;</span>
+            <span class="cycle-arrow">&#x279C;</span>
+            <span class="cycle-arrow">&#x279C;</span>
+            <span class="cycle-arrow">&#x279C;</span>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 5: VERIFICATION-FIRST -->
+<section class="slide" data-slide="5" data-enter="enter-blur" data-exit="exit-fade">
+    <div class="slide-content">
+        <p class="slide-tag" data-cue="s5-tag">Core principle</p>
+        <h2 data-cue="s5-title">Verification-First <span class="gradient-text">Development</span></h2>
+        <div class="quote" data-cue="s5-quote" data-cue-dir="left">"Proof beats progress."</div>
+        <div class="grid-2" style="margin-top:var(--content-gap)">
+            <div class="compare-col old" data-cue="s5-old" data-cue-dir="left">
+                <h3>The Old Way</h3>
+                <ul>
+                    <li>Code first, test later</li>
+                    <li>Hope it works in prod</li>
+                    <li>Fix bugs after shipping</li>
+                    <li>Speed = lines written</li>
+                </ul>
+            </div>
+            <div class="compare-col new" data-cue="s5-new" data-cue-dir="right">
+                <h3>The VibeOps Way</h3>
+                <ul>
+                    <li>Verify first, generate second</li>
+                    <li>Prove it works before building</li>
+                    <li>Prevent bugs by design</li>
+                    <li>Speed = decisions validated</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 6: 5-PHASE JOURNEY -->
+<section class="slide" data-slide="6" data-enter="enter-split" data-exit="exit-slide-down">
+    <div class="slide-content">
+        <p class="slide-tag" data-cue="s6-tag">The onboarding path</p>
+        <h2 data-cue="s6-title">The 5-Phase <span class="gradient-text">Journey</span></h2>
+        <div class="phase-list">
+            <div class="phase-item" data-cue="s6-p0">
+                <span class="phase-num">1</span>
+                <h3>Philosophy Foundation</h3>
+                <span class="phase-sep">&mdash;</span>
+                <p>Mindset shift &amp; manifesto</p>
+            </div>
+            <div class="phase-item" data-cue="s6-p1">
+                <span class="phase-num">2</span>
+                <h3>Frame the Problem</h3>
+                <span class="phase-sep">&mdash;</span>
+                <p>Executable acceptance criteria</p>
+            </div>
+            <div class="phase-item" data-cue="s6-p2">
+                <span class="phase-num">3</span>
+                <h3>Model Security</h3>
+                <span class="phase-sep">&mdash;</span>
+                <p>STRIDE threat modeling</p>
+            </div>
+            <div class="phase-item" data-cue="s6-p3">
+                <span class="phase-num">4</span>
+                <h3>Generate with AI</h3>
+                <span class="phase-sep">&mdash;</span>
+                <p>CLAUDE.md &amp; partnership</p>
+            </div>
+            <div class="phase-item" data-cue="s6-p4">
+                <span class="phase-num">5</span>
+                <h3>Verify &amp; Observe</h3>
+                <span class="phase-sep">&mdash;</span>
+                <p>3-layer verification gates</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 7: PHASE 1 DEEP DIVE -->
+<section class="slide" data-slide="7" data-enter="enter-slide-up" data-exit="exit-fade">
+    <div class="slide-content">
+        <p class="slide-tag" data-cue="s7-tag">Phase 1</p>
+        <h2 data-cue="s7-title"><span class="gradient-text">Philosophy</span> Foundation</h2>
+        <div class="phase-list" style="max-width:700px">
+            <div class="card" data-cue="s7-c1">
+                <span class="card-icon">&#x1F4D6;</span>
+                <h3>Read the Manifesto</h3>
+                <p>The Agentic Development Manifesto — core principles that redefine how we build software.</p>
+            </div>
+            <div class="card" data-cue="s7-c2">
+                <span class="card-icon">&#x1F504;</span>
+                <h3>Old vs New Comparison</h3>
+                <p>Real-world example: building user auth the traditional way vs. the agentic way.</p>
+            </div>
+            <div class="card" data-cue="s7-c3">
+                <span class="card-icon">&#x2705;</span>
+                <h3>Pass the Assessment — <span class="gradient-text" id="pctText">80%</span> Gate</h3>
+                <p>5-question interactive quiz. No progression without verified understanding.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 8: PHASES 2-4 -->
+<section class="slide" data-slide="8" data-enter="enter-fade" data-exit="exit-zoom">
+    <div class="slide-content">
+        <p class="slide-tag" data-cue="s8-tag">Phases 2 &ndash; 4</p>
+        <h2 data-cue="s8-title">Frame &rarr; Model &rarr; <span class="gradient-text">Generate</span></h2>
+        <div class="grid-3">
+            <div class="card" data-cue="s8-frame">
+                <span class="card-icon">&#x1F3AF;</span>
+                <h3>Frame</h3>
+                <p>Transform vague requirements into GIVEN/WHEN/THEN acceptance criteria that machines can verify.</p>
+            </div>
+            <div class="card" data-cue="s8-model">
+                <span class="card-icon">&#x1F6E1;</span>
+                <h3>Model</h3>
+                <p>Apply STRIDE threat modeling before any code exists. Security boundaries first.</p>
+            </div>
+            <div class="card" data-cue="s8-generate">
+                <span class="card-icon">&#x1F916;</span>
+                <h3>Generate</h3>
+                <p>AI generates code within verified constraints. Humans guide, AI executes.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 9: VERIFY & OBSERVE -->
+<section class="slide" data-slide="9" data-enter="enter-rotate" data-exit="exit-fade">
+    <div class="slide-content">
+        <p class="slide-tag" data-cue="s9-tag">Phase 5</p>
+        <h2 data-cue="s9-title">Verify &amp; <span class="gradient-text">Observe</span></h2>
+        <div class="grid-3">
+            <div class="verify-card security" data-cue="s9-sec">
+                <h3>&#x1F512; Security</h3>
+                <ul>
+                    <li>SAST / static analysis</li>
+                    <li>Secrets detection</li>
+                    <li>Dependency audits</li>
+                    <li>Policy compliance</li>
+                </ul>
+            </div>
+            <div class="verify-card quality" data-cue="s9-qual">
+                <h3>&#x2728; Quality</h3>
+                <ul>
+                    <li>Unit tests</li>
+                    <li>Integration tests</li>
+                    <li>E2E coverage</li>
+                    <li>Performance benchmarks</li>
+                </ul>
+            </div>
+            <div class="verify-card deploy" data-cue="s9-dep">
+                <h3>&#x1F680; Deployment</h3>
+                <ul>
+                    <li>Health checks</li>
+                    <li>Canary releases</li>
+                    <li>Rollback testing</li>
+                    <li>Observability setup</li>
+                </ul>
+            </div>
+        </div>
+        <p data-cue="s9-quote" style="margin-top:var(--content-gap);font-style:italic;color:var(--text-muted);font-size:var(--small-size)">
+            "Shipping code is easy. Shipping <strong style="color:var(--accent-blue)">verified</strong> code is the only part that matters."
+        </p>
+    </div>
+</section>
+
+<!-- SLIDE 10: GETTING STARTED -->
+<section class="slide" data-slide="10" data-enter="enter-blur" data-exit="exit-slide-down">
+    <div class="slide-content">
+        <p class="slide-tag" data-cue="s10-tag">Quick start</p>
+        <h2 data-cue="s10-title">Getting <span class="gradient-text">Started</span></h2>
+        <div class="code-block" data-cue="s10-code">
+            <div class="code-line" data-cue="s10-ln1"><span class="comment"># Clone the repo</span></div>
+            <div class="code-line" data-cue="s10-ln2"><span class="prompt">$</span> <span class="cmd">git clone https://github.com/...</span></div>
+            <div class="code-line" data-cue="s10-ln3"><span class="prompt">$</span> <span class="cmd">cd agentic-development-onboarding</span></div>
+            <div class="code-line" data-cue="s10-ln4" style="height:1em">&nbsp;</div>
+            <div class="code-line" data-cue="s10-ln5"><span class="comment"># Launch the onboarding system</span></div>
+            <div class="code-line" data-cue="s10-ln6"><span class="prompt">$</span> <span class="cmd">./onboard.sh</span></div>
+            <div class="code-line" data-cue="s10-ln7" style="height:1em">&nbsp;</div>
+            <div class="code-line" data-cue="s10-ln8"><span class="comment"># Choose "Start VibeOps Tutorial"</span></div>
+        </div>
+        <p data-cue="s10-sub" style="margin-top:var(--content-gap);color:var(--text-muted);font-size:var(--small-size)">
+            Interactive menu &bull; Progress tracking &bull; Verification gates at every phase
+        </p>
+        <p data-cue="s10-claude" data-cue-dir="blur" style="margin-top:var(--element-gap);font-size:var(--small-size);color:var(--text-muted)">
+            Built for <span style="color:var(--accent-blue)">Claude Code</span> &mdash; the methodology is AI-agnostic, the tooling is Claude-native.
+        </p>
+    </div>
+</section>
+
+<!-- SLIDE 11: TOOLKIT -->
+<section class="slide" data-slide="11" data-enter="enter-split" data-exit="exit-fade">
+    <div class="slide-content">
+        <p class="slide-tag" data-cue="s11-tag">What's included</p>
+        <h2 data-cue="s11-title">The <span class="gradient-text">Toolkit</span></h2>
+        <div class="grid-4">
+            <div class="card" data-cue="s11-c1">
+                <span class="card-icon">&#x1F6E1;</span>
+                <h3>Verification Pipelines</h3>
+                <p>Security, quality, and deployment gates — all built in and ready to run.</p>
+            </div>
+            <div class="card" data-cue="s11-c2">
+                <span class="card-icon">&#x1F4CA;</span>
+                <h3>Progress Tracking</h3>
+                <p>JSON-based state management. Remembers where you left off across sessions.</p>
+            </div>
+            <div class="card" data-cue="s11-c3">
+                <span class="card-icon">&#x1F4DD;</span>
+                <h3>Daily Checklist</h3>
+                <p>VibeOps practices for your daily development workflow.</p>
+            </div>
+            <div class="card" data-cue="s11-c4">
+                <span class="card-icon">&#x1F517;</span>
+                <h3>Claude Code Native</h3>
+                <p>Built on Claude Code with CLAUDE.md conventions. The methodology is AI-agnostic &mdash; the implementation is Claude-powered.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 12: CTA -->
+<section class="slide" data-slide="12" data-enter="enter-zoom" data-exit="exit-fade">
+    <canvas class="particle-overlay" data-particles="burst"></canvas>
+    <div class="slide-content">
+        <p class="slide-tag" data-cue="s12-tag">Your turn</p>
+        <h1 data-cue="s12-title" data-cue-dir="scale">
+            Start Your <span class="gradient-text">Agentic</span> Journey
+        </h1>
+        <p class="tagline" data-cue="s12-sub" data-cue-dir="blur">
+            The bottleneck has shifted. Your judgment is the superpower.
+        </p>
+        <div data-cue="s12-cmd" data-cue-dir="scale" style="margin-top:var(--content-gap)">
+            <div class="code-block" style="display:inline-block;max-width:400px;text-align:center;padding:0.75rem 1.5rem;">
+                <span class="prompt">$</span> <span class="cmd">./onboard.sh</span>
+            </div>
+        </div>
+        <p data-cue="s12-welcome" data-cue-dir="blur" style="margin-top:var(--content-gap);font-size:var(--body-size);color:var(--accent-blue);font-family:var(--font-display);font-weight:500">
+            Welcome to VibeOps.
+        </p>
+    </div>
+</section>
+
+</div><!-- /slide-deck -->
+
+<script>
+/* ===========================================
+   ANIMATION CUE MAP
+   Synced to narration timecodes from Whisper STT.
+   Each entry: [timeInSeconds, cueId, optionalEffectClass]
+   =========================================== */
+const SLIDE_CUES = {
+    1: [
+        [0.0,  's1-tag'],
+        [0.3,  's1-title'],
+        [3.9,  's1-line1'],
+        [6.6,  's1-line2'],
+        [6.6,  's1-title', 'cue-glow'],       // glow when "superhuman" is said
+        [10.0, 's1-sub'],
+    ],
+    2: [
+        [0.0,  's2-tag'],
+        [0.4,  's2-title'],
+        [2.0,  's2-old'],
+        [8.5,  's2-new'],
+        [12.5, 's2-new', 'cue-border-sweep'],  // emphasis on "human judgment"
+        [16.0, 's2-title', 'cue-glow'],
+    ],
+    3: [
+        [0.0,  's3-tag'],
+        [0.3,  's3-title'],
+        [2.2,  's3-p1'],
+        [4.8,  's3-p1', 'cue-border-sweep'],
+        [7.5,  's3-p2'],
+        [10.0, 's3-p2', 'cue-border-sweep'],
+        [11.8, 's3-p3'],
+        [14.0, 's3-p3', 'cue-border-sweep'],
+        [17.0, 's3-p4'],
+        [19.5, 's3-p4', 'cue-border-sweep'],
+    ],
+    4: [
+        [0.0,  's4-tag'],
+        [0.3,  's4-title'],
+        [1.5,  's4-ring'],
+        [3.0,  's4-envision'],
+        [3.0,  'cycle-arrow-0'],       // special: handled in code
+        [6.5,  's4-explore'],
+        [6.5,  'cycle-arrow-1'],
+        [10.0, 's4-execute'],
+        [10.0, 'cycle-arrow-2'],
+        [13.5, 's4-evolve'],
+        [13.5, 'cycle-arrow-3'],
+        [16.5, 'cycle-spin'],          // special: start ring spinning
+    ],
+    5: [
+        [0.0,  's5-tag'],
+        [0.0,  's5-quote'],
+        [0.5,  's5-quote', 'cue-glow'],
+        [0.8,  's5-title'],
+        [1.8,  's5-old'],
+        [6.2,  's5-new'],
+        [13.0, 's5-new', 'cue-border-sweep'],
+    ],
+    6: [
+        [0.0,  's6-tag'],
+        [0.3,  's6-title'],
+        [2.2,  's6-p0'],
+        [4.7,  's6-p1'],
+        [9.0,  's6-p2'],
+        [12.5, 's6-p3'],
+        [15.5, 's6-p4'],
+        [19.5, 's6-p4', 'cue-border-sweep'],  // "gate" emphasis
+    ],
+    7: [
+        [0.0,  's7-tag'],
+        [0.3,  's7-title'],
+        [0.8,  's7-c1'],
+        [4.0,  's7-c1', 'cue-border-sweep'],
+        [4.5,  's7-c2'],
+        [7.5,  's7-c2', 'cue-border-sweep'],
+        [8.0,  's7-c3'],
+        [13.0, 's7-c3', 'cue-border-sweep'],   // 80% emphasis
+        [13.0, 'counter-80'],                    // special: counter animation
+        [16.0, 's7-title', 'cue-glow'],
+    ],
+    8: [
+        [0.0,  's8-tag'],
+        [0.3,  's8-title'],
+        [4.0,  's8-frame'],
+        [7.0,  's8-frame', 'cue-border-sweep'],
+        [9.2,  's8-model'],
+        [12.5, 's8-model', 'cue-border-sweep'],
+        [13.4, 's8-generate'],
+        [15.5, 's8-generate', 'cue-border-sweep'],
+    ],
+    9: [
+        [0.0,  's9-tag'],
+        [0.3,  's9-title'],
+        [4.5,  's9-sec'],
+        [8.5,  's9-sec', 'cue-border-sweep'],
+        [9.2,  's9-qual'],
+        [12.5, 's9-qual', 'cue-border-sweep'],
+        [12.8, 's9-dep'],
+        [15.5, 's9-dep', 'cue-border-sweep'],
+        [18.5, 's9-quote'],
+        [18.5, 's9-quote', 'cue-glow'],
+    ],
+    10: [
+        [0.0,  's10-tag'],
+        [0.3,  's10-title'],
+        [0.8,  's10-code'],
+        [1.5,  's10-ln1'],
+        [2.5,  's10-ln2'],
+        [3.5,  's10-ln3'],
+        [4.2,  's10-ln4'],
+        [5.0,  's10-ln5'],
+        [6.0,  's10-ln6'],
+        [6.0,  's10-ln6', 'cue-glow'],
+        [7.0,  's10-ln7'],
+        [8.0,  's10-ln8'],
+        [10.5, 's10-sub'],
+        [15.5, 's10-claude'],
+        [16.0, 's10-claude', 'cue-glow'],
+    ],
+    11: [
+        [0.0,  's11-tag'],
+        [0.3,  's11-title'],
+        [0.8,  's11-c1'],
+        [5.0,  's11-c1', 'cue-border-sweep'],
+        [5.2,  's11-c2'],
+        [10.4, 's11-c2', 'cue-border-sweep'],
+        [10.4, 's11-c3'],
+        [13.0, 's11-c3', 'cue-border-sweep'],
+        [13.0, 's11-c4'],
+        [17.0, 's11-c4', 'cue-border-sweep'],
+        [17.0, 's11-c4', 'cue-glow'],
+    ],
+    12: [
+        [0.0,  's12-tag'],
+        [0.5,  's12-title'],
+        [4.5,  's12-sub'],
+        [7.5,  's12-cmd'],
+        [7.5,  's12-cmd', 'cue-bounce'],
+        [11.0, 's12-welcome'],
+        [11.0, 's12-welcome', 'cue-glow'],
+        [11.0, 's12-title', 'cue-glow'],
+    ],
+};
+
+/* Slide transition types per slide */
+const SLIDE_TRANSITIONS = [
+    'enter-zoom',       // 1
+    'enter-slide-up',   // 2
+    'enter-fade',       // 3
+    'enter-rotate',     // 4
+    'enter-blur',       // 5
+    'enter-split',      // 6
+    'enter-slide-up',   // 7
+    'enter-fade',       // 8
+    'enter-rotate',     // 9
+    'enter-blur',       // 10
+    'enter-split',      // 11
+    'enter-zoom',       // 12
+];
+
+const EXIT_TRANSITIONS = [
+    'exit-zoom',        // 1
+    'exit-slide-down',  // 2
+    'exit-fade',        // 3
+    'exit-zoom',        // 4
+    'exit-fade',        // 5
+    'exit-slide-down',  // 6
+    'exit-fade',        // 7
+    'exit-zoom',        // 8
+    'exit-fade',        // 9
+    'exit-slide-down',  // 10
+    'exit-fade',        // 11
+    'exit-fade',        // 12
+];
+
+/* Slide durations from Whisper STT (in seconds) */
+const SLIDE_DURATIONS = [18.72, 18.4, 23.37, 20.32, 17.68, 22.56, 18.57, 18.04, 20.95, 19.15, 19.96, 12.67];
+
+/* ===========================================
+   MAIN PRESENTATION ENGINE
+   =========================================== */
+class Presentation {
+    constructor() {
+        this.slides = document.querySelectorAll('.slide');
+        this.total = this.slides.length;
+        this.current = -1;
+        this.isTransitioning = false;
+        this.autoAdvance = true;
+        this.muted = false;
+        this.firedCues = new Set();
+        this.rafId = null;
+
+        /* DOM refs */
+        this.audio = document.getElementById('slideAudio');
+        this.progressBar = document.getElementById('progressBar');
+        this.navDots = document.getElementById('navDots');
+        this.ppIcon = document.getElementById('ppIcon');
+        this.audioFill = document.getElementById('audioFill');
+        this.timeLabel = document.getElementById('timeLabel');
+        this.slideCounter = document.getElementById('slideCounter');
+        this.autoplayCircle = document.getElementById('autoplayCircle');
+        this.audioControls = document.getElementById('audioControls');
+        this.muteIcon = document.getElementById('muteIcon');
+
+        this.createNavDots();
+        this.bindEvents();
+    }
+
+    /* -------------------------------------------
+       START (called after user click for audio policy)
+       ------------------------------------------- */
+    start() {
+        document.getElementById('audioControls').style.opacity = '1';
+        this.goToSlide(0);
+        this.startSyncLoop();
+    }
+
+    /* -------------------------------------------
+       NAV DOTS
+       ------------------------------------------- */
+    createNavDots() {
+        for (let i = 0; i < this.total; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'nav-dot';
+            dot.setAttribute('aria-label', `Slide ${i + 1}`);
+            dot.addEventListener('click', () => this.goToSlide(i));
+            this.navDots.appendChild(dot);
+        }
+    }
+
+    /* -------------------------------------------
+       EVENT BINDINGS
+       ------------------------------------------- */
+    bindEvents() {
+        /* Keyboard */
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'ArrowDown') {
+                e.preventDefault();
+                this.next();
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                this.prev();
+            } else if (e.key === 'm') {
+                this.toggleMute();
+            }
+        });
+
+        /* Touch swipe */
+        let sx = 0, sy = 0;
+        document.addEventListener('touchstart', e => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+        document.addEventListener('touchend', e => {
+            const dx = sx - e.changedTouches[0].clientX;
+            const dy = sy - e.changedTouches[0].clientY;
+            if (Math.abs(dx) > 50 || Math.abs(dy) > 50) {
+                (dx > 0 || dy > 0) ? this.next() : this.prev();
+            }
+        }, { passive: true });
+
+        /* Audio events */
+        this.audio.addEventListener('ended', () => {
+            this.ppIcon.setAttribute('d', 'M8 5v14l11-7z');
+            if (this.autoAdvance && this.current < this.total - 1) {
+                /* Brief pause then advance */
+                setTimeout(() => this.next(), 800);
+            }
+        });
+
+        /* Play/pause */
+        document.getElementById('playPauseBtn').addEventListener('click', () => {
+            if (this.audio.paused) {
+                this.audio.play().catch(() => {});
+            } else {
+                this.audio.pause();
+            }
+        });
+
+        this.audio.addEventListener('play', () => {
+            this.ppIcon.setAttribute('d', 'M6 19h4V5H6v14zm8-14v14h4V5h-4z');
+        });
+        this.audio.addEventListener('pause', () => {
+            this.ppIcon.setAttribute('d', 'M8 5v14l11-7z');
+        });
+
+        /* Mute */
+        document.getElementById('muteBtn').addEventListener('click', () => this.toggleMute());
+
+        /* Audio track click to seek */
+        document.getElementById('audioTrack').addEventListener('click', (e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const pct = (e.clientX - rect.left) / rect.width;
+            if (this.audio.duration) {
+                this.audio.currentTime = pct * this.audio.duration;
+            }
+        });
+    }
+
+    toggleMute() {
+        this.muted = !this.muted;
+        this.audio.muted = this.muted;
+        this.muteIcon.setAttribute('d', this.muted
+            ? 'M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z'
+            : 'M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z'
+        );
+    }
+
+    /* -------------------------------------------
+       SLIDE NAVIGATION
+       ------------------------------------------- */
+    goToSlide(index) {
+        if (index === this.current || this.isTransitioning || index < 0 || index >= this.total) return;
+        this.isTransitioning = true;
+
+        const prev = this.current;
+        this.current = index;
+
+        /* Reset cues for new slide */
+        this.firedCues.clear();
+
+        /* Exit previous slide */
+        if (prev >= 0) {
+            const prevSlide = this.slides[prev];
+            prevSlide.classList.remove('active', SLIDE_TRANSITIONS[prev]);
+            prevSlide.classList.add(EXIT_TRANSITIONS[prev]);
+
+            /* Reset cue-active on old slide elements */
+            prevSlide.querySelectorAll('.cue-active').forEach(el => {
+                el.classList.remove('cue-active', 'cue-emphasis', 'cue-glow', 'cue-bounce', 'cue-underline', 'cue-border-sweep', 'cue-count-pop');
+            });
+
+            /* Reset cycle special states */
+            prevSlide.querySelectorAll('.node-active').forEach(el => el.classList.remove('node-active'));
+            prevSlide.querySelectorAll('.arrow-active').forEach(el => el.classList.remove('arrow-active'));
+            const ring = prevSlide.querySelector('.cycle-ring');
+            if (ring) ring.classList.remove('spinning');
+
+            setTimeout(() => {
+                prevSlide.classList.remove(EXIT_TRANSITIONS[prev]);
+                prevSlide.style.visibility = 'hidden';
+                prevSlide.style.opacity = '0';
+            }, 500);
+        }
+
+        /* Enter new slide */
+        const slide = this.slides[index];
+        slide.style.visibility = 'visible';
+        slide.style.opacity = '1';
+        slide.classList.add('active', SLIDE_TRANSITIONS[index]);
+
+        /* Fire particle burst if slide has particle canvas */
+        const pCanvas = slide.querySelector('[data-particles]');
+        if (pCanvas) this.burstParticles(pCanvas);
+
+        /* Load and play audio */
+        const num = String(index + 1).padStart(2, '0');
+        this.audio.src = `audio/slide-${num}.mp3`;
+        if (!this.muted) {
+            this.audio.play().catch(() => {});
+        }
+
+        /* Update UI */
+        this.updateProgress();
+        this.updateDots();
+        this.slideCounter.textContent = `${index + 1} / ${this.total}`;
+
+        setTimeout(() => { this.isTransitioning = false; }, 600);
+    }
+
+    next() { this.goToSlide(this.current + 1); }
+    prev() { this.goToSlide(this.current - 1); }
+
+    updateProgress() {
+        const pct = ((this.current + 1) / this.total) * 100;
+        this.progressBar.style.width = pct + '%';
+    }
+
+    updateDots() {
+        this.navDots.querySelectorAll('.nav-dot').forEach((d, i) => {
+            d.classList.toggle('active', i === this.current);
+        });
+    }
+
+    /* -------------------------------------------
+       SYNC LOOP — fires cues based on audio time
+       Runs via requestAnimationFrame
+       ------------------------------------------- */
+    startSyncLoop() {
+        const tick = () => {
+            this.rafId = requestAnimationFrame(tick);
+            if (this.current < 0) return;
+
+            const t = this.audio.currentTime || 0;
+            const dur = this.audio.duration || 1;
+
+            /* Update audio progress bar */
+            this.audioFill.style.width = (t / dur * 100) + '%';
+
+            /* Update time label */
+            const mins = Math.floor(t / 60);
+            const secs = Math.floor(t % 60);
+            this.timeLabel.textContent = `${mins}:${String(secs).padStart(2, '0')}`;
+
+            /* Update autoplay ring */
+            if (dur > 0) {
+                const circumference = 78.5; /* 2*PI*12.5 */
+                const offset = circumference * (1 - t / dur);
+                this.autoplayCircle.style.strokeDashoffset = offset;
+            }
+
+            /* Fire cues */
+            const cues = SLIDE_CUES[this.current + 1];
+            if (!cues) return;
+
+            for (const cue of cues) {
+                const [time, id, effect] = cue;
+                const key = `${this.current}-${id}-${effect || 'show'}`;
+
+                if (t >= time && !this.firedCues.has(key)) {
+                    this.firedCues.add(key);
+                    this.fireCue(id, effect);
+                }
+            }
+        };
+
+        tick();
+    }
+
+    fireCue(id, effect) {
+        /* Special cues */
+        if (id.startsWith('cycle-arrow-')) {
+            const idx = parseInt(id.split('-')[2]);
+            const arrows = this.slides[this.current].querySelectorAll('.cycle-arrow');
+            if (arrows[idx]) arrows[idx].classList.add('arrow-active');
+
+            /* Also pulse the corresponding node */
+            const nodes = this.slides[this.current].querySelectorAll('.cycle-node');
+            if (nodes[idx]) nodes[idx].classList.add('node-active');
+            return;
+        }
+
+        if (id === 'cycle-spin') {
+            const ring = document.getElementById('cycleRing');
+            if (ring) ring.classList.add('spinning');
+
+            /* Pulse all nodes */
+            this.slides[this.current].querySelectorAll('.cycle-node').forEach(n => n.classList.add('node-active'));
+            this.slides[this.current].querySelectorAll('.cycle-arrow').forEach(a => a.classList.add('arrow-active'));
+            return;
+        }
+
+        if (id === 'counter-80') {
+            const el = document.getElementById('pctText');
+            if (el) {
+                el.classList.add('cue-count-pop');
+                /* Animate counter 0 → 80 */
+                let val = 0;
+                const interval = setInterval(() => {
+                    val += 4;
+                    if (val >= 80) { val = 80; clearInterval(interval); }
+                    el.textContent = val + '%';
+                }, 30);
+            }
+            return;
+        }
+
+        /* Standard cue: find element by data-cue attribute */
+        const el = document.querySelector(`[data-cue="${id}"]`);
+        if (!el) return;
+
+        if (effect) {
+            /* Apply effect class (pulse, glow, bounce, etc.) */
+            el.classList.add(effect);
+            setTimeout(() => el.classList.remove(effect), 1500);
+        } else {
+            /* Show element */
+            el.classList.add('cue-active');
+        }
+    }
+
+    /* -------------------------------------------
+       PARTICLE BURST
+       ------------------------------------------- */
+    burstParticles(canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const ctx = canvas.getContext('2d');
+        const particles = [];
+        const cx = canvas.width / 2;
+        const cy = canvas.height / 2;
+
+        for (let i = 0; i < 60; i++) {
+            const angle = Math.random() * Math.PI * 2;
+            const speed = 1 + Math.random() * 4;
+            particles.push({
+                x: cx, y: cy,
+                vx: Math.cos(angle) * speed,
+                vy: Math.sin(angle) * speed,
+                life: 1,
+                decay: 0.008 + Math.random() * 0.015,
+                radius: 1 + Math.random() * 2.5,
+                hue: Math.random() > 0.5 ? 190 : 260,
+            });
+        }
+
+        const animate = () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            let alive = false;
+            for (const p of particles) {
+                if (p.life <= 0) continue;
+                alive = true;
+                p.x += p.vx;
+                p.y += p.vy;
+                p.life -= p.decay;
+                p.vy += 0.02; /* gravity */
+                ctx.globalAlpha = p.life;
+                ctx.fillStyle = `hsl(${p.hue}, 100%, 65%)`;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            if (alive) requestAnimationFrame(animate);
+            else ctx.clearRect(0, 0, canvas.width, canvas.height);
+        };
+
+        animate();
+    }
+}
+
+/* ===========================================
+   GRID BACKGROUND
+   =========================================== */
+class GridBG {
+    constructor(canvas) {
+        this.canvas = canvas;
+        this.ctx = canvas.getContext('2d');
+        this.glowPoints = [];
+        this.resize();
+        this.initPoints();
+        this.animate();
+        window.addEventListener('resize', () => this.resize());
+    }
+
+    resize() {
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+    }
+
+    initPoints() {
+        for (let i = 0; i < 10; i++) {
+            this.glowPoints.push({
+                x: Math.random() * this.canvas.width,
+                y: Math.random() * this.canvas.height,
+                vx: (Math.random() - 0.5) * 0.4,
+                vy: (Math.random() - 0.5) * 0.4,
+                r: 1 + Math.random() * 2,
+                hue: Math.random() > 0.5 ? 190 : 260,
+            });
+        }
+    }
+
+    animate() {
+        const ctx = this.ctx;
+        const w = this.canvas.width;
+        const h = this.canvas.height;
+
+        ctx.clearRect(0, 0, w, h);
+
+        /* Grid */
+        ctx.strokeStyle = 'rgba(255,255,255,0.015)';
+        ctx.lineWidth = 1;
+        const sp = 80;
+        for (let x = 0; x <= w; x += sp) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke(); }
+        for (let y = 0; y <= h; y += sp) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke(); }
+
+        /* Glow points with connections */
+        for (const p of this.glowPoints) {
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < 0 || p.x > w) p.vx *= -1;
+            if (p.y < 0 || p.y > h) p.vy *= -1;
+
+            const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, 70);
+            g.addColorStop(0, `hsla(${p.hue},100%,60%,0.12)`);
+            g.addColorStop(1, 'transparent');
+            ctx.fillStyle = g;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 70, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = `hsla(${p.hue},100%,70%,0.5)`;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        /* Draw lines between close points */
+        ctx.strokeStyle = 'rgba(0,212,255,0.04)';
+        ctx.lineWidth = 0.5;
+        for (let i = 0; i < this.glowPoints.length; i++) {
+            for (let j = i + 1; j < this.glowPoints.length; j++) {
+                const a = this.glowPoints[i], b = this.glowPoints[j];
+                const dist = Math.hypot(a.x - b.x, a.y - b.y);
+                if (dist < 250) {
+                    ctx.globalAlpha = 1 - dist / 250;
+                    ctx.beginPath();
+                    ctx.moveTo(a.x, a.y);
+                    ctx.lineTo(b.x, b.y);
+                    ctx.stroke();
+                }
+            }
+        }
+        ctx.globalAlpha = 1;
+
+        requestAnimationFrame(() => this.animate());
+    }
+}
+
+/* ===========================================
+   INIT
+   =========================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    const pres = new Presentation();
+    new GridBG(document.getElementById('grid-canvas'));
+
+    /* Start overlay click handler */
+    const overlay = document.getElementById('startOverlay');
+    const startBtn = document.getElementById('startBtn');
+
+    const begin = () => {
+        overlay.classList.add('hidden');
+        pres.start();
+    };
+
+    startBtn.addEventListener('click', begin);
+    overlay.addEventListener('click', begin);
+});
+</script>
+</body>
+</html>

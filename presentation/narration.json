@@ -1,0 +1,78 @@
+{
+  "voice": "onyx",
+  "model": "tts-1-hd",
+  "slides": [
+    {
+      "id": 1,
+      "title": "Title",
+      "file": "audio/slide-01.mp3",
+      "text": "Welcome to VibeOps — the agentic development onboarding system. We are not building AI to replace developers. We are building AI to make developers superhuman. In the next few minutes, you'll learn a new way to think about software development — one where human judgment, not coding speed, is the superpower."
+    },
+    {
+      "id": 2,
+      "title": "The Bottleneck Has Shifted",
+      "file": "audio/slide-02.mp3",
+      "text": "Here's the fundamental insight. In traditional development, the bottleneck was coding speed — how fast can I type, how fast can I implement? But in agentic development, the bottleneck has shifted to human judgment — how quickly can I verify what's right? This changes everything about how we work."
+    },
+    {
+      "id": 3,
+      "title": "What is VibeOps?",
+      "file": "audio/slide-03.mp3",
+      "text": "VibeOps is built on four pillars. First: AI Partnership over Tool Usage — treat AI as a thinking partner, not autocomplete. Second: Verification over Implementation — prove before you build. Third: Orchestration over Coding — guide intelligent systems instead of writing every line. Fourth: Emergence over Planning — create conditions for solutions to arise through collaboration."
+    },
+    {
+      "id": 4,
+      "title": "The VibeOps Cycle",
+      "file": "audio/slide-04.mp3",
+      "text": "The VibeOps development cycle has four phases. Envision — where humans define the vision and constraints. Explore — where human and AI collaborate to evaluate options. Execute — where AI implements based on verified boundaries. And Evolve — where we learn and improve continuously. This cycle repeats, getting better each iteration."
+    },
+    {
+      "id": 5,
+      "title": "Verification-First Development",
+      "file": "audio/slide-05.mp3",
+      "text": "Proof beats progress. In the old way, you coded first and tested later — hoping things worked. In the VibeOps way, you verify first and generate second. Tests and specifications come before implementation. This isn't slower — it's faster, because you catch problems before they're built."
+    },
+    {
+      "id": 6,
+      "title": "The 5-Phase Journey",
+      "file": "audio/slide-06.mp3",
+      "text": "This repo takes you through five phases. Phase one: absorb the philosophy. Phase two: learn to frame problems with executable acceptance criteria. Phase three: model security threats before writing code. Phase four: generate code through AI partnership. Phase five: verify and observe with three layers of validation. Each phase has a gate — you must pass to proceed."
+    },
+    {
+      "id": 7,
+      "title": "Phase 1: Philosophy Foundation",
+      "file": "audio/slide-07.mp3",
+      "text": "Everyone starts at Phase One — the philosophy foundation. You'll read the Agentic Development Manifesto, study how traditional and agentic approaches differ using real examples, then pass an interactive assessment. You need eighty percent to advance. No progression without verified understanding."
+    },
+    {
+      "id": 8,
+      "title": "Frame, Model, Generate",
+      "file": "audio/slide-08.mp3",
+      "text": "In Phases Two through Four, you learn the core workflow. Frame problems using given-when-then acceptance criteria instead of vague requirements. Model threats using the STRIDE framework before any code is generated. Then partner with AI to generate code within verified, secure boundaries."
+    },
+    {
+      "id": 9,
+      "title": "Verify & Observe",
+      "file": "audio/slide-09.mp3",
+      "text": "Phase Five is where it all comes together. Three verification layers. Security — static analysis, secrets scanning, dependency audits. Quality — unit tests, integration tests, end-to-end coverage. Deployment — health checks, canary releases, rollback testing. Remember: shipping code is easy. Shipping verified code is the only part that matters."
+    },
+    {
+      "id": 10,
+      "title": "Getting Started",
+      "file": "audio/slide-10.mp3",
+      "text": "Getting started is simple. Clone the repo, run the onboard script, and choose Start VibeOps Tutorial from the interactive menu. The system tracks your progress, enforces gates, and guides you through each phase at your own pace. The methodology is AI-agnostic, but this repo is built natively on Claude Code."
+    },
+    {
+      "id": 11,
+      "title": "The Toolkit",
+      "file": "audio/slide-11.mp3",
+      "text": "The repo comes loaded with tools. Built-in verification pipelines for security, quality, and deployment. JSON-based progress tracking that remembers where you left off. A daily checklist for VibeOps practices. And Claude Code integration — CLAUDE.md conventions, agentic workflows, and project setup scripts baked right in."
+    },
+    {
+      "id": 12,
+      "title": "Call to Action",
+      "file": "audio/slide-12.mp3",
+      "text": "Start your agentic development journey today. Clone the repo, run the onboard script, and transform how you build software. The bottleneck has shifted. Your judgment is the superpower. Welcome to VibeOps."
+    }
+  ]
+}

@@ -147,6 +147,22 @@ Transform software development from:
 **We are not building AI to replace developers.**
 **We are building AI to make developers superhuman.**
 
+## Presentation
+
+An interactive animated presentation with voice-over narration is included:
+
+**[Watch the Presentation](https://mariano215.github.io/agentic-development-onboarding/presentation/)**
+
+Or run it locally:
+```bash
+# Open in your browser
+open presentation/index.html
+# or
+xdg-open presentation/index.html
+```
+
+The presentation covers the VibeOps philosophy, the 5-phase methodology, and how to get started — all in about 4 minutes with auto-advancing narrated slides.
+
 ---
 
 **Version**: 1.0
